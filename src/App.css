@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+/* Jumbotron */
+.main-bg{
+  height:500px;
+  background-image: url("./img/jb-twilight-struggle2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 50px;  
+}
+
+.card-newArrivals{
+
+  margin: 50px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
