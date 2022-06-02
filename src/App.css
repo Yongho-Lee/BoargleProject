@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.products-page{
+  margin-top: 60px;
+}
+
 /* Jumbotron */
 .main-bg{
   height:500px;

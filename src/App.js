@@ -5,7 +5,24 @@ import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //import component
+
+import Products from './component/Products.js'
+import AllGames from './component/All-games.js'
+import Arrivals from './component/Arrivals.js'
+import Best2players from './component/Best-2players'
+import BestFamily from './component/Best-family'
+import BestStrategy from './component/Best-strategy'
+import InStock from './component/In-stock.js'
+
 import Card from './component/Card.js'
+import Detail from './component/Detail.js'
+
+import NotFound from './component/NotFound.js';
+
+
+
+
+
 
 //import js
 import boardGameList from './boardGameList.js'
@@ -58,14 +75,16 @@ let navigate = useNavigate();
           </>
         }/>
         
-        <Route path="/products">
-          <Route path="arrivals" element={<p>event One</p>}/>
-          <Route path="in-stock" element={<p>Event Two</p>}/>
-          <Route path="all-games" element={<p>Event Two</p>}/>          
-          <Route path="best-2players" element={<p>Event Two</p>}/>
-          <Route path="best-family" element={<p>Event Two</p>}/>  
-          <Route path="best-strategy" element={<p>Event Two</p>}/>        
+        <Route path="/products" element={<Products/>}>
+          <Route path="arrivals" element={<Arrivals/>}/>
+          <Route path="in-stock" element={<InStock/>}/>
+          <Route path="all-games" element={<AllGames/>}/>          
+          <Route path="best-2players" element={<Best2players/>}/>
+          <Route path="best-family" element={<BestFamily/>}/>  
+          <Route path="best-strategy" element={<BestStrategy/>}/>        
         </Route>
+
+        <Route path="*" element={<NotFound/>} />
 
 
       </Routes>
