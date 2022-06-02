@@ -11,10 +11,10 @@ function Card(props){
         <p className="card-newArrivals"> New Arrivals Here </p>
 
 
-        {
+        {/* { 
             bogamelist(props)
         }
-            
+             */}
 
             
         <Container>
@@ -64,10 +64,12 @@ function Card(props){
 
   }
 
-  function bogamelist(props){
+
+  // for checking list
+//   function bogamelist(props){
     
-        console.log(props.boardGameList[1].data)
+//         console.log(props.boardGameList[1].data)
    
-  }
+//   }
 
   export default Card;

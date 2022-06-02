@@ -16,8 +16,9 @@ import InStock from './component/In-stock.js'
 
 import Card from './component/Card.js'
 import Detail from './component/Detail.js'
+import Cart from './component/Cart.js'
 
-import NotFound from './component/NotFound.js';
+import NotFound from './component/NotFound.js'
 
 
 
@@ -31,6 +32,18 @@ function App() {
 
   
 let navigate = useNavigate();
+
+
+  const lists = boardGameList;
+  const datas = lists.map(function(a,i){
+      return lists[i].data
+  })
+
+  let games = [];
+  for(let i in datas){
+      games.push(...datas[i])
+  }
+
 
 
   return (
@@ -52,7 +65,7 @@ let navigate = useNavigate();
                 <NavDropdown.Item onClick={()=>{ navigate('/products/best-2players')}}>Best 2 Players Games</NavDropdown.Item>
                 <NavDropdown.Item onClick={()=>{ navigate('/products/best-strategy')}}>Best strategy</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="/cart">Cart</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -75,14 +88,16 @@ let navigate = useNavigate();
           </>
         }/>
         
-        <Route path="/products" element={<Products/>}>
+        <Route path="/products" element={<Products list={lists}/>}>
           <Route path="arrivals" element={<Arrivals/>}/>
           <Route path="in-stock" element={<InStock/>}/>
-          <Route path="all-games" element={<AllGames/>}/>          
-          <Route path="best-2players" element={<Best2players/>}/>
+          <Route path="all-games" element={<AllGames allGames = {games}/>}/>          
+          <Route path="best-2players" element={<Best2players allGames={games}/>}/>
           <Route path="best-family" element={<BestFamily/>}/>  
           <Route path="best-strategy" element={<BestStrategy/>}/>        
         </Route>
+
+        <Route path="/cart" element = {<Cart />} />
 
         <Route path="*" element={<NotFound/>} />
 

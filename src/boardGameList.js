@@ -51,7 +51,7 @@ let boardGameList = [{
             shortName: "navegador",
             name: "Navegador",
             publisher: "Rio Grande Games",   
-            price: "$ CAD", 
+            price: "$65.99 CAD", 
             desc: "Sail to unexplored lands while managing your trade in the Portuguese Colonial Empire.",
             stock: 8, 
             imgSrc: "", 
@@ -150,7 +150,15 @@ let boardGameList = [{
             bestPlayer: 3,
             lastStock: 20220405,
             type: ["family", "dice-rolling", "hand-management"]
-        },
+        }
+
+    ],
+    
+    
+}, 
+{
+    page: 2,
+    data: [
         {
             id: 892884000241,
             shortName: "quacks-of-quedlin",
@@ -181,114 +189,35 @@ let boardGameList = [{
             lastStock: 20220524,
             type: ["stock", "economic", "investment"]
         }
-    ],
-    
-    
-}, 
-{
-    page: 2,
-    data: [
+
+
 
     ],
 
 },
 
-{
-    page: 3,
-    data: [
-        {
-            id: "",
-            shortName: "",
-            name: "",
-            publisher: "",   
-            price: "$ CAD", 
-            desc: "",
-            stock: 0, 
-            imgSrc: "", 
-            weight: "",
-            player: [], 
-            bestPlayer: 3,
-            lastStock: 20220503,
-            type: []
-        },
-        // {
-        //     id: 681706711713,
-        //     shortName: "pandemic-legacy-1",
-        //     name: "Pandemic Legacy: Season 1",
-        //     publisher: "Z-Man Games",   
-        //     price: "$79.99 CAD", 
-        //     desc: "Mutating diseases are spreading around the world - can your team save humanity?",
-        //     stock: 2, 
-        //     imgSrc: "", 
-        //     weight: "2.83 / 5",
-        //     player: [2, 3, 4], 
-        //     bestPlayer: 4,
-        //     lastStock: 20220228,
-        //     type: ["cooperative", "point-to-point", "medical", "legacy"]
-        // },
-        // {
-        //     id: 655132004923,
-        //     shortName: "roll-for-gall",
-        //     name: "Roll for the Galaxy",
-        //     publisher: " Rio Grande Games",   
-        //     price: "$54.95 CAD", 
-        //     desc: " Utilize your dice populace to develop technologies, settle worlds, and ship goods.",
-        //     stock: 5, 
-        //     imgSrc: "", 
-        //     weight: "2.78 / 5", 
-        //     player: [2,3,4,5],
-        //     bestPlayer: 3,
-        //     lastStock: 20220403,
-        //     type: ["strategy", "dice-rolling", "simultaneous-action"]
-        // },
-        // {
-        //     id: 644216627721,
-        //     shortName: "wingspan",
-        //     name: "Wingspan",
-        //     publisher: "Stonemaier Games ",   
-        //     price: "$55.00 CAD", 
-        //     desc: " Attract a beautiful and diverse collection of birds to your wildlife reserve.",
-        //     stock: 0, 
-        //     imgSrc: "", 
-        //     weight: "2.44 / 5",
-        //     player: [1,2,3,4], 
-        //     bestPlayer: 3,
-        //     lastStock: 20220405,
-        //     type: ["family", "dice-rolling", "hand-management"]
-        // },
-        // {
-        //     id: 892884000241,
-        //     shortName: "quacks-of-quedlin",
-        //     name: "The Quacks of Quedlinburg",
-        //     publisher: "North Star Games",   
-        //     price: "$63.55 CAD", 
-        //     desc: "Pull ingredients from your stock to make your pot bubble, but hopefully not explode!",
-        //     stock: 1, 
-        //     imgSrc: "", 
-        //     weight: "1.95 / 5", 
-        //     player: [2,3,4],
-        //     bestPlayer: 4,
-        //     lastStock: 20220524,
-        //     type: ["family", "medieval", "bagBuilding"]
-        // },
-        // {
-        //     id: 29877018307,
-        //     shortName: "1830",
-        //     name: "1830 Railways And Robber Barons",
-        //     publisher: "Mayfair Games",   
-        //     price: "$69.95 CAD", 
-        //     desc: "A classic game of managing railroads and investing wisely. ",
-        //     stock: 5,
-        //     imgSrc: "", 
-        //     weight: "4.16 / 5",
-        //     player: [3, 4, 5, 6],
-        //     bestPlayer: 4,
-        //     lastStock: 20220524,
-        //     type: ["stock", "economic", "investment"]
-        // }
-    ],
+// {
+//     page: 3,
+//     data: [
+//         {
+//             id: "",
+//             shortName: "",
+//             name: "",
+//             publisher: "",   
+//             price: "$ CAD", 
+//             desc: "",
+//             stock: 0, 
+//             imgSrc: "", 
+//             weight: "",
+//             player: [], 
+//             bestPlayer: 3,
+//             lastStock: 20220503,
+//             type: []
+//         },
 
-},
+//     ],
+
+// },
 
 
 
