@@ -13,10 +13,7 @@ function AllGames(props) {
         <>
         <div>
             <h4> All-Games Page </h4>
-            {
-                console.log('test message')
-            }
-            
+
         </div>
 
         <Container>
