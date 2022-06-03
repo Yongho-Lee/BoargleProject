@@ -1,6 +1,11 @@
 import { Container, Row, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
+
+
 
 function AllGames(props) {
+
+    let navigate = useNavigate();
 
     const games = props.allGames;
     return(
@@ -8,6 +13,9 @@ function AllGames(props) {
         <>
         <div>
             <h4> All-Games Page </h4>
+            {
+                console.log('test message')
+            }
             
         </div>
 
@@ -17,9 +25,10 @@ function AllGames(props) {
                     games.map(function(a,i){
                         return(
                             <Col sm key={i}>
-                                 {/* <img onClick={() =>{navigate('./detail/'+i)}} src={"https://github.com/Yongho-Lee/jjongs_diary/blob/main/src/img/jjong" + (i +1) +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} /> */}
+                                <img onClick={() =>{navigate('../detail/'+games[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + games[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} />
                                 <h3> {games[i].name} </h3>
                                 <p> {games[i].price} </p>
+                                <p> {games[i].stock} Units </p>
                             </Col>
                         )
                     })

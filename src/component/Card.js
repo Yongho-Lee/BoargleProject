@@ -1,11 +1,9 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom';
 
 
 function Card(props){
     let navigate = useNavigate();
-    let {id} = useParams();
     let lists = props.lists;
 
     return(

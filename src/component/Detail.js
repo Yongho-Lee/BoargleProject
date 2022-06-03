@@ -8,11 +8,21 @@ function Detail(props) {
     let navigate = useNavigate();
     let {id} = useParams();
 
-    let srcname = games.map(function(a,i){
+    let srcname = "";
+    let index = 0;    
+    for(let i in games){
         if(games[i].id == id){
-            return games[i].shortName;
+            index = i;
         }
-    })
+    }    
+    for(let i in games){
+        if(games[i].id == id){
+            srcname = games[i].shortName;
+        }
+    }
+
+
+    let srclink = "https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + srcname + ".jpg?raw=true"
 
 
     return(
@@ -20,18 +30,18 @@ function Detail(props) {
         <>
 
         <div className="body-margin"></div>
-        <p> {games[1].name}</p>
+        {/* <p> {games[1].name}</p>
         <p>{id}</p>
-        <p>{srcname}</p>
+        <p>{srclink}</p> */}
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-                    <img src={require("../img/bgImage/puerto-rico.jpg?raw=true")} width="250px" height="200px" alt={'bgimage'+id} />
+                    <img src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + games[index].shortName + ".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+id} style={{marginTop:"40px"}}/>
                 </div>
                 <div className="col-md-6 mt-4">
-                    {/* <h4 className="pt-5">{props.shoes[0].title}</h4>
-                    <p>{props.shoes[0].content}</p>
-                    <p>{props.shoes[0].price}원</p> */}
+                    <h4 className="pt-5">{games[index].name}</h4>
+                    <p>{games[index].price}</p>
+                    <p>{games[index].stock}  units</p>
                     <button className="btn btn-danger">주문하기</button>
                 </div>
             </div> 

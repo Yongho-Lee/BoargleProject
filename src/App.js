@@ -89,12 +89,12 @@ let navigate = useNavigate();
         }/>
         
         <Route path="/products" element={<Products list={lists}/>}>
-          <Route path="arrivals" element={<Arrivals/>}/>
-          <Route path="in-stock" element={<InStock/>}/>
+          <Route path="arrivals" element={<Arrivals allGames={games}/>}/>
+          <Route path="in-stock" element={<InStock allGames={games}/>}/>
           <Route path="all-games" element={<AllGames allGames = {games}/>}/>          
           <Route path="best-2players" element={<Best2players allGames={games}/>}/>
-          <Route path="best-family" element={<BestFamily/>}/>  
-          <Route path="best-strategy" element={<BestStrategy/>}/>
+          <Route path="best-family" element={<BestFamily allGames={games}/>}/>  
+          <Route path="best-strategy" element={<BestStrategy allGames={games}/>}/>
           <Route path="detail/:id" element = {<Detail allGames={games}/>} />        
         </Route>
 

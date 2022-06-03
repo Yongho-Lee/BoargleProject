@@ -13,11 +13,6 @@ function Products(props){
     )
 }
 
-// function bogamelist(props){
-    
-//     console.log(props.list[1].data[0])
-
-// }
 
 
 export default Products;
