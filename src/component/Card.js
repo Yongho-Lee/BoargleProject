@@ -1,9 +1,13 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+
 
 function Card(props){
-    //let navigate = useNavigate();
-  
+    let navigate = useNavigate();
+    let {id} = useParams();
+    let lists = props.lists;
+
     return(
       <>
 
@@ -20,12 +24,15 @@ function Card(props){
         <Container>
             <Row>
         {
-          props.boardGameList[0].data.map(function(a,i){
+          lists[0].data.map(function(a,i){
+            let bcd = lists[0].data[i].id;
+            let name = lists[0].data[i].shortName;
+
             return(
                 <Col sm key={i}>           
-                    {/* <img onClick={() =>{navigate('./detail/'+i)}} src={"https://github.com/Yongho-Lee/jjongs_diary/blob/main/src/img/jjong" + (i +1) +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} /> */}
-                    <h4> {props.boardGameList[0].data[i].name} </h4>
-                    <p> {props.boardGameList[0].data[i].price} </p>
+                    <img onClick={() =>{navigate('./products/detail/'+bcd)}} src={require("../img/bgImage/"+ name +".jpg?raw=true")} width="250px" height="200px" alt={'bgimage'+i} />
+                    <h4> {lists[0].data[i].name} </h4>
+                    <p> {lists[0].data[i].price} </p>
                 </Col>                     
             )
           })
@@ -37,12 +44,12 @@ function Card(props){
             <Row>
 
             {
-                props.boardGameList[1].data.map(function(a,i){
+                lists[1].data.map(function(a,i){
                     return(
                         <Col sm key={i}>           
                             {/* <img onClick={() =>{navigate('./detail/'+i)}} src={"https://github.com/Yongho-Lee/jjongs_diary/blob/main/src/img/jjong" + (i +1) +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} /> */}
-                            <h4> {props.boardGameList[1].data[i].name} </h4>
-                            <p> {props.boardGameList[1].data[i].price} </p>
+                            <h4> {lists[1].data[i].name} </h4>
+                            <p> {lists[1].data[i].price} </p>
                         </Col>                     
                     )
           })

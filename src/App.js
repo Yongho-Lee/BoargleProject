@@ -83,7 +83,7 @@ let navigate = useNavigate();
             {/* jumbotron */}
             <div className="main-bg"> </div>      
             {/* lists */}
-            <Card boardGameList={boardGameList} />
+            <Card lists={lists} />
 
           </>
         }/>
@@ -94,7 +94,8 @@ let navigate = useNavigate();
           <Route path="all-games" element={<AllGames allGames = {games}/>}/>          
           <Route path="best-2players" element={<Best2players allGames={games}/>}/>
           <Route path="best-family" element={<BestFamily/>}/>  
-          <Route path="best-strategy" element={<BestStrategy/>}/>        
+          <Route path="best-strategy" element={<BestStrategy/>}/>
+          <Route path="detail/:id" element = {<Detail allGames={games}/>} />        
         </Route>
 
         <Route path="/cart" element = {<Cart />} />
