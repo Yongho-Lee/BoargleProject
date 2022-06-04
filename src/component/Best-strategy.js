@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
-
+import Listing from './Listing.js'
 
 function BestStrategy(props) {
 
@@ -9,12 +9,19 @@ function BestStrategy(props) {
 
     let games = props.allGames;
 
-    let bstfamily = [];
+    let bstStrategy = [];
     for(let i in games){                
         if(findFamily(games[i].type)){
-            bstfamily.push(games[i])
+            bstStrategy.push(games[i])
         }
     }
+
+    function findFamily(games){
+        if(games.indexOf('strategy') > -1){
+            return true
+        } else { return false }
+    }
+    
 
     return(
 
@@ -27,15 +34,7 @@ function BestStrategy(props) {
 
                 <Row>
                     {
-                        bstfamily.map(function(a,i){
-                            return(
-                                <Col sm key={i}>
-                                    <img onClick={() =>{navigate('../detail/'+bstfamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + bstfamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} />
-                                    <h3> {bstfamily[i].name} </h3>
-                                    <p> {bstfamily[i].price} </p>
-                                </Col>
-                            )
-                        })
+                        <Listing list={bstStrategy}/>
                     }
                 </Row>
 
@@ -52,10 +51,5 @@ function BestStrategy(props) {
 
 
 
-function findFamily(games){
-    if(games.indexOf('strategy') > -1){
-        return true
-    } else { return false }
-}
 
 export default BestStrategy;

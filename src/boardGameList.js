@@ -13,7 +13,7 @@ let boardGameList = [{
             weight: "3.60 / 5", 
             player: [2],
             bestPlayer: 2,
-            lastStock: 20220314,
+            lastStock: '2022-03-14',
             type: ["strategy", "war"]
         },
         {
@@ -28,7 +28,7 @@ let boardGameList = [{
             weight: "3.28 / 5",
             player: [2, 3, 4, 5],
             bestPlayer: 3,
-            lastStock: 20220307,
+            lastStock: '2022-03-07',
             type: ["strategy", "action-drafting", "follow", "economic", "city-building"]
         },
         {
@@ -43,7 +43,7 @@ let boardGameList = [{
             weight: "3.00 / 5",
             player: [2, 3, 4], 
             bestPlayer: 3,
-            lastStock: 20220208,
+            lastStock: '2022-02-08',
             type: ["strategy", "dice-rolling", "pattern-building", "medieval"]
         },
         {
@@ -58,7 +58,7 @@ let boardGameList = [{
             weight: "3.09 / 5",
             player: [3, 4, 5], 
             bestPlayer: 4,
-            lastStock: 20220124,
+            lastStock: '2022-01-24',
             type: ["strategy","economic", "exploration"]
         },
         {
@@ -73,7 +73,7 @@ let boardGameList = [{
             weight: "2.31 / 5",
             player: [3, 4], 
             bestPlayer: 3,
-            lastStock: 20220424,
+            lastStock: '2022-04-24',
             type: ["family", "economic", "hexagon", "dice-rolling"]
         },
         {
@@ -88,7 +88,7 @@ let boardGameList = [{
             weight: "3.31 / 5",
             player: [3, 4, 5], 
             bestPlayer: 5,
-            lastStock: 20220524,
+            lastStock: '2022-05-24',
             type: ["strategy", "war", "economic", "area-movement", "influence"]
         },
         {
@@ -103,7 +103,7 @@ let boardGameList = [{
             weight: "4.42 / 5",
             player: [3, 4], 
             bestPlayer: 3,
-            lastStock: 20220503,
+            lastStock: '2022-05-03',
             type: ["strategy", "war", "action-points"]
         },
         {
@@ -118,7 +118,7 @@ let boardGameList = [{
             weight: "2.83 / 5",
             player: [2, 3, 4], 
             bestPlayer: 4,
-            lastStock: 20220228,
+            lastStock: '2022-02-28',
             type: ["cooperative", "point-to-point", "medical", "legacy"]
         },
         {
@@ -133,7 +133,7 @@ let boardGameList = [{
             weight: "2.78 / 5", 
             player: [2,3,4,5],
             bestPlayer: 3,
-            lastStock: 20220403,
+            lastStock: '2022-04-03',
             type: ["strategy", "dice-rolling", "simultaneous-action"]
         },
         {
@@ -148,7 +148,7 @@ let boardGameList = [{
             weight: "2.44 / 5",
             player: [1,2,3,4], 
             bestPlayer: 3,
-            lastStock: 20220405,
+            lastStock: '2022-04-05',
             type: ["family", "dice-rolling", "hand-management"]
         }
 
@@ -171,7 +171,7 @@ let boardGameList = [{
             weight: "1.95 / 5", 
             player: [2,3,4],
             bestPlayer: 4,
-            lastStock: 20220524,
+            lastStock: '2022-05-24',
             type: ["family", "medieval", "bagBuilding"]
         },
         {
@@ -186,7 +186,7 @@ let boardGameList = [{
             weight: "4.16 / 5",
             player: [3, 4, 5, 6],
             bestPlayer: 4,
-            lastStock: 20220524,
+            lastStock: '2022-05-24',
             type: ["stock", "economic", "investment"]
         }
 

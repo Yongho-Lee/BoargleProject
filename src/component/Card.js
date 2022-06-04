@@ -1,6 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
-import BestFamily from './Best-family'
 
 function Card(props){
     let navigate = useNavigate();

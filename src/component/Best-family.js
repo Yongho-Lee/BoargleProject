@@ -1,6 +1,8 @@
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
+import Listing from './Listing.js'
+import stockCheck from '../js/stockCheck';
 
 
 function BestFamily(props) {
@@ -27,15 +29,7 @@ function BestFamily(props) {
 
                 <Row>
                     {
-                        bstfamily.map(function(a,i){
-                            return(
-                                <Col sm key={i}>
-                                    <img onClick={() =>{navigate('../detail/'+bstfamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + bstfamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} />
-                                    <h3> {bstfamily[i].name} </h3>
-                                    <p> {bstfamily[i].price} </p>
-                                </Col>
-                            )
-                        })
+                        <Listing list={bstfamily} />
                     }
                 </Row>
 

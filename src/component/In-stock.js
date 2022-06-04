@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
+import Listing from './Listing.js';
 
 
 function InStock(props) {
@@ -26,15 +27,7 @@ function InStock(props) {
 
                 <Row>
                     {
-                        instkgames.map(function(a,i){
-                            return(
-                                <Col sm key={i}>
-                                    <img onClick={() =>{navigate('../detail/'+instkgames[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + instkgames[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'jjong'+i} />
-                                    <h3> {instkgames[i].name} </h3>
-                                    <p> {instkgames[i].price} </p>
-                                </Col>
-                            )
-                        })
+                        <Listing list={instkgames} />
                     }
                 </Row>
 
