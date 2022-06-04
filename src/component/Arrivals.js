@@ -1,11 +1,7 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom';
 
 import Listing from './Listing';
 
-
 function Arrivals(props) {    
-    let navigate = useNavigate();
     const games = props.allGames;
     
     let now = new Date();	// today date
@@ -31,15 +27,10 @@ function Arrivals(props) {
             <h4> New Arrival page </h4>
 
             <p>{getYmd10(twoMonthAgo)} ~ today</p>
-            <Container>
-                <Row>
 
-                    {
-                        <Listing list={newArrivals}/>
-                    }
-
-                </Row>
-            </Container>
+                {
+                    <Listing list={newArrivals}/>
+                }
 
         </div>
 

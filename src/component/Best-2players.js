@@ -1,11 +1,7 @@
-import { Container, Row } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom';
-
 import Listing from './Listing.js'
 
 function Best2players(props) {
 
-    let navigate = useNavigate();
 
     let games = props.allGames;
 
@@ -20,17 +16,11 @@ function Best2players(props) {
 
         <>
         <div>
-            <h4> Best 2 players page </h4>            
+            <h4> Best 2 players page </h4>        
 
-            <Container>
-
-                <Row>
-                    {
-                        <Listing list={bst2games}/>
-                    }
-                </Row>
-
-            </Container>
+                {
+                    <Listing list={bst2games}/>
+                }
      
         </div>
 

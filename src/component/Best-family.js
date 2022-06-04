@@ -1,13 +1,8 @@
-import { Container, Row } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom';
 
 import Listing from './Listing.js'
-import stockCheck from '../js/stockCheck';
 
 
 function BestFamily(props) {
-
-    let navigate = useNavigate();
 
     let games = props.allGames;
 
@@ -25,16 +20,11 @@ function BestFamily(props) {
             <h4> Best Family Game page </h4>      
 
 
-            <Container>
 
-                <Row>
-                    {
-                        <Listing list={bstfamily} />
-                    }
-                </Row>
+                {
+                    <Listing list={bstfamily} />
+                }
 
-            </Container>
-     
         </div>
 
 
