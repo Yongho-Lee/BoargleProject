@@ -1,5 +1,7 @@
+import Tab from './Tab';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 
 
 function Detail(props) {
@@ -8,7 +10,8 @@ function Detail(props) {
     let navigate = useNavigate();
     let {id} = useParams();
 
-    let srcname = "";
+
+    let srcName = "";
     let index = 0;    
     for(let i in games){
         if(games[i].id == id){
@@ -17,12 +20,12 @@ function Detail(props) {
     }    
     for(let i in games){
         if(games[i].id == id){
-            srcname = games[i].shortName;
+            srcName = games[i].shortName;
         }
     }
 
 
-    let srclink = "https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + srcname + ".jpg?raw=true"
+    let srcLink = "https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + srcName + ".jpg?raw=true"
 
 
     return(
@@ -32,7 +35,7 @@ function Detail(props) {
         <div className="body-margin"></div>
         {/* <p> {games[1].name}</p>
         <p>{id}</p>
-        <p>{srclink}</p> */}
+        <p>{srcLink}</p> */}
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
@@ -47,11 +50,15 @@ function Detail(props) {
             </div> 
         </div>
 
+        <Tab/>
 
         </>
     )
 
 }
+
+
+
 
 
 export default Detail;

@@ -1,8 +1,15 @@
 import { Table } from 'react-bootstrap';
+import { useSelector,useDispatch } from 'react-redux';
+
+// redux3편 4분 12초 부터, 리덕스 수정
 
 function Cart() {
-    return(
 
+    let state = useSelector((state)=>state);
+    console.log(state.cart)
+
+
+    return(
         <>
         <div className="body-margin"></div>
         <div>
@@ -21,12 +28,19 @@ function Cart() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {
+                    state.cart.map((a,i)=> 
+                    <tr key={i}>
+                        <td>{state.cart[i].name}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    )
+                }
+
+                
+  
             </tbody>
         </Table>
 

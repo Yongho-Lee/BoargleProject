@@ -54,6 +54,19 @@
   margin: 50px;
 }
 
+/* Detail - Tab */
+.start {
+  text-align: left;
+  opacity: 0;
+  margin: 20px;
+  margin-bottom: 80px;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

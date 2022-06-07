@@ -4,8 +4,7 @@ import './App.css';
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-//import component
-
+//import products components
 import Products from './component/Products.js'
 import AllGames from './component/All-games.js'
 import Arrivals from './component/Arrivals.js'
@@ -14,18 +13,13 @@ import BestFamily from './component/Best-family'
 import BestStrategy from './component/Best-strategy'
 import InStock from './component/In-stock.js'
 
+//import other page components
 import Card from './component/Card.js'
 import Detail from './component/Detail.js'
 import Cart from './component/Cart.js'
-
 import NotFound from './component/NotFound.js'
 
-
-
-
-
-
-//import js
+//import board games list js
 import boardGameList from './boardGameList.js'
 
 function App() {

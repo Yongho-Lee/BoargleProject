@@ -7,16 +7,7 @@ function Card(props){
 
     return(
       <>
-
-
         <p className="card-newArrivals"> New Arrivals Here </p>
-
-
-        {/* { 
-            bogamelist(props)
-        }
-             */}
-
             
         <Container>
           <Row>

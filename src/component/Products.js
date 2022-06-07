@@ -6,8 +6,6 @@ function Products(props){
         <div className="body-margin">
         </div>
         <Outlet></Outlet>
-
-
         </>
     
     )
