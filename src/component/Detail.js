@@ -74,7 +74,7 @@ function Detail(props) {
 }
 
 
-
+//comment
 
 
 export default Detail;
