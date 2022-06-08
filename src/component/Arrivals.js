@@ -32,15 +32,9 @@ function Arrivals(props) {
                     <Listing list={newArrivals}/>
                 }
 
-        </div>
-
-
-        
+        </div>        
     )
-
 }
-
-
 
 
 export default Arrivals;

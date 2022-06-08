@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 // redux - To cart
 import { useDispatch } from 'react-redux';
@@ -23,6 +25,37 @@ function Detail(props) {
             index = i;
         }
     }    
+    
+
+    let currentIndex = games.find( x => x.id == id);
+    useEffect(()=>{
+        //console.log(currentIndex.id)
+
+        localStorage.getItem('watched') == null ?
+        localStorage.setItem('watched', JSON.stringify([]))
+        : console.log("watched Items here: " + localStorage.getItem('watched'));
+    
+               
+        localStorage.getItem('prodCart') == null ?
+        localStorage.setItem('prodCart', JSON.stringify([]))
+        : console.log("In cart Items here: " + localStorage.getItem('prodCart'))
+
+        let storage = localStorage.getItem('watched')
+        storage = JSON.parse(storage)
+        storage.push(currentIndex.id)
+        
+        // delete redundant data
+        storage = new Set(storage)
+        // to Array
+        storage = Array.from(storage)
+
+        localStorage.setItem('watched', JSON.stringify(storage))
+
+
+    
+
+    }, [])
+
 
      // let srcName = "";
     // for(let i in games){
@@ -33,6 +66,7 @@ function Detail(props) {
 
 
     //let srcLink = "https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + srcName + ".jpg?raw=true"
+
 
 
     return(

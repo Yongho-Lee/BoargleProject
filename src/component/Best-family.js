@@ -17,23 +17,17 @@ function BestFamily(props) {
 
         <>
         <div>
-            <h4> Best Family Game page </h4>      
-
-
+            <h4> Best Family Game page </h4>  
 
                 {
                     <Listing list={bstfamily} />
                 }
 
         </div>
-
-
         </>
     )
 
 }
-
-
 
 
 function findFamily(games){

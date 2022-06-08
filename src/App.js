@@ -21,12 +21,27 @@ import NotFound from './component/NotFound.js'
 
 //import board games list js
 import boardGameList from './boardGameList.js'
+import { useEffect } from 'react';
 
 function App() {
 
   
 let navigate = useNavigate();
 
+  useEffect(()=>{
+    localStorage.getItem('watched') == null ?
+    localStorage.setItem('watched', JSON.stringify([]))
+    : console.log("watched Items here: " + localStorage.getItem('watched'));
+
+    
+    localStorage.getItem('prodCart') == null ?
+    localStorage.setItem('prodCart', JSON.stringify([]))
+    : console.log("In cart Items here: " + localStorage.getItem('prodCart'))
+
+
+
+
+  }, [])
 
   const lists = boardGameList;
   const datas = lists.map(function(a,i){

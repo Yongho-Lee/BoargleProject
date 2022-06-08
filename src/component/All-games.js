@@ -13,14 +13,10 @@ function AllGames(props) {
                 {
                     <Listing list={games}/>
                 }    
-
         </>
     )
 
 }
-
-
-
 
 
 export default AllGames;
