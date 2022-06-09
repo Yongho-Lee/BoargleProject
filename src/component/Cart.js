@@ -108,7 +108,7 @@ function Cart() {
                                 }}>
                                     -
                             </button>
-                            <span className="cart-count">{state.cart[i].stock} </span> 
+                            <span className="cart-count">{state.cart[i].qty} </span> 
                             <button onClick={()=>{
                                     dispatch(increaseCount(state.cart[i].id))
                                 }}>

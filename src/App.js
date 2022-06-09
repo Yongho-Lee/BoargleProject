@@ -20,13 +20,20 @@ import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
 
 //import board games list js
-import boardGameList from './boardGameList.js'
+import boardGameList from './js/boardGameList.js'
 import { useEffect } from 'react';
+
+// redux, import state( local or server data )
+import { useDispatch } from 'react-redux';
+import { loadPrvList } from './store/cartSlice.js';
+
 
 function App() {
 
-  
-let navigate = useNavigate();
+  //console.log(state.cart)
+  let dispatch = useDispatch();
+
+  let navigate = useNavigate();
 
   useEffect(()=>{
     localStorage.getItem('watched') == null ?
@@ -34,9 +41,16 @@ let navigate = useNavigate();
     : console.log("watched Items here: " + localStorage.getItem('watched'));
 
     
-    localStorage.getItem('prodCart') == null ?
-    localStorage.setItem('prodCart', JSON.stringify([]))
-    : console.log("In cart Items here: " + localStorage.getItem('prodCart'))
+
+    if(localStorage.getItem('prodCart') == null){
+      localStorage.setItem('prodCart', JSON.stringify([]))
+    } else{
+      let storage = localStorage.getItem('prodCart')
+      storage = JSON.parse(storage)
+      console.log("In cart Items here: " + localStorage.getItem('prodCart'))
+      dispatch(loadPrvList(storage))
+
+    }
 
 
 
