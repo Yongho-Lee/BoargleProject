@@ -38,7 +38,6 @@ let cart = createSlice({
 
             // replace storage -> prodCart(localStorage) data
             localStorage.setItem('prodCart', JSON.stringify(storage))
-            //testmessage
         },
 
         decreaseCount(state, action){
