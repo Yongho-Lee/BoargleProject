@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { increaseCount, decreaseCount, loadPrvList } from './../store/cartSlice.js';
+import { increaseCount, decreaseCount, loadPrvList, removeItem } from './../store/cartSlice.js';
 //import { changeName, changeAge } from './../store/userSlice.js';
 
 
@@ -94,6 +94,7 @@ function Cart() {
                     <th>#</th>
                     <th>Product Name</th>
                     <th>Quantity</th>
+                    <th>remove</th>
                 </tr>
             </thead>
             <tbody>
@@ -113,6 +114,11 @@ function Cart() {
                                     dispatch(increaseCount(state.cart[i].id))
                                 }}>
                                     +
+                            </button>
+                        </td>
+                        <td> <button onClick={()=>{
+                                    dispatch(removeItem(state.cart[i].id))
+                            }}> x 
                             </button>
                         </td>
                     </tr>

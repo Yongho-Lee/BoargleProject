@@ -126,6 +126,25 @@ let cart = createSlice({
             }
             // console.log("state in function")
             // console.log(state[0])
+        },
+
+        removeItem(state, action){
+
+            let storage = localStorage.getItem('prodCart')
+            storage = JSON.parse(storage) 
+            
+            let num = state.findIndex((a)=>{
+                return a.id === action.payload
+            })
+
+            state.splice(num, 1);
+            storage.splice(num,1);
+            
+            
+
+            localStorage.setItem('prodCart', JSON.stringify(storage))
+
+
         }
     }
 
@@ -133,5 +152,5 @@ let cart = createSlice({
 
 })
 
-export let { increaseCount, decreaseCount, addCartList, loadPrvList } = cart.actions;
+export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem } = cart.actions;
 export default cart
