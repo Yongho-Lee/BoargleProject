@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { increaseCount, decreaseCount, loadPrvList, removeItem } from './../store/cartSlice.js';
@@ -14,6 +15,7 @@ import { increaseCount, decreaseCount, loadPrvList, removeItem } from './../stor
 
 function Cart() {
 
+    let navigate = useNavigate();
     let state = useSelector((state)=>state);
     //console.log(state.cart)
     let dispatch = useDispatch();
@@ -87,7 +89,13 @@ function Cart() {
         }}></button>
         <p> {state.cart[0].stock}</p> */}
 
-        <Table>
+        {
+            state.cart[0] == null ?
+            <h2 className="cart-empty"> Your cart is empty </h2>
+
+            :
+            <>
+            <Table>
 
             <thead>
                 <tr>
@@ -132,6 +140,15 @@ function Cart() {
   
             </tbody>
         </Table>
+
+        <Button onClick={()=>{
+            navigate('/checkout');
+        }}> Checkout</Button>
+        </>
+            
+        }
+
+        
 
 
         </>

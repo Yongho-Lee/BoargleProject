@@ -25,6 +25,10 @@
 .product-name{
   color: #333333;
 }
+.cart-empty {
+  margin: 30px;
+  padding: 20px;
+}
 
 .btn-disable{
   pointer-events : none;

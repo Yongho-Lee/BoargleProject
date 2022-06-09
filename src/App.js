@@ -13,11 +13,14 @@ import BestFamily from './component/Best-family'
 import BestStrategy from './component/Best-strategy'
 import InStock from './component/In-stock.js'
 
+
 //import other page components
 import Card from './component/Card.js'
 import Detail from './component/Detail.js'
 import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
+import Checkout from './component/Checkout'
+
 
 //import board games list js
 import boardGameList from './js/boardGameList.js'
@@ -122,8 +125,10 @@ function App() {
         </Route>
 
         <Route path="/cart" element = {<Cart />} />
+        <Route path="/checkout" element ={<Checkout/>} />
 
         <Route path="*" element={<NotFound/>} />
+        
 
 
       </Routes>
