@@ -5,6 +5,8 @@ import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { increaseCount, decreaseCount, loadPrvList, removeItem } from './../store/cartSlice.js';
+import { toCheckOut } from './../store/checkoutSlice.js';
+
 //import { changeName, changeAge } from './../store/userSlice.js';
 
 
@@ -101,6 +103,7 @@ function Cart() {
                 <tr>
                     <th>#</th>
                     <th>Product Name</th>
+                    <th>Price</th>
                     <th>Quantity</th>
                     <th>remove</th>
                 </tr>
@@ -110,9 +113,10 @@ function Cart() {
 
                     state.cart.map((a,i)=> 
                     <tr key={i}>
-                        <td>{i+1}</td>
-                        <td>{state.cart[i].name}</td>
-                        <td> <button onClick={()=>{
+                        <td> <img className="product-image" onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
+                        <td style={{paddingTop:"30px"}}>{state.cart[i].name}</td>
+                        <td style={{paddingTop:"30px"}}>{state.cart[i].totalPrice}</td>
+                        <td style={{paddingTop:"30px"}}> <button onClick={()=>{
                                     dispatch(decreaseCount(state.cart[i].id))
                                 }}>
                                     -
@@ -124,7 +128,7 @@ function Cart() {
                                     +
                             </button>
                         </td>
-                        <td> <button onClick={()=>{
+                        <td style={{paddingTop:"30px"}}> <button onClick={()=>{
                                     dispatch(removeItem(state.cart[i].id))
                             }}> x 
                             </button>
@@ -143,7 +147,8 @@ function Cart() {
 
         <Button onClick={()=>{
             navigate('/checkout');
-        }}> Checkout</Button>
+            dispatch(toCheckOut(state.cart))
+        }}> Checkout </Button>
         </>
             
         }
