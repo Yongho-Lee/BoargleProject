@@ -48,10 +48,7 @@ function Detail(props) {
         // to Array
         storage = Array.from(storage)
 
-        localStorage.setItem('watched', JSON.stringify(storage))
-
-
-    
+        localStorage.setItem('watched', JSON.stringify(storage))    
 
     }, [])
 

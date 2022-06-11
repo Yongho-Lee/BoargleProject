@@ -33,6 +33,9 @@ let cart = createSlice({
             } else{
                 state[num].qty++;
                 storage[storageNum].qty++;
+                
+                state[num].totalPrice = +(state[num].totalPrice + state[num].price).toFixed(2);
+                storage[storageNum].totalPrice = +(storage[storageNum].totalPrice + storage[storageNum].price).toFixed(2);
                 console.log(storage[storageNum].qty)
             }
 
@@ -58,17 +61,23 @@ let cart = createSlice({
 
 
 
-            if(state[num].qty === 0 || state[num].qty < 0) {
-                state[num].qty = 0;
-                storage[storageNum].qty = 0;
+            if(state[num].qty === 1 || state[num].qty < 1) {
+                state[num].qty = 1;
+                storage[storageNum].qty = 1;
                 
                 console.log("storage[storageNum] in decreaseFun")
                 console.log(storage[storageNum])
                 console.log(storage[storageNum].qty)
+                
+                // state[num].totalPrice = 0;
+                // storage[storageNum].totalPrice = 0;
             } else{
                 state[num].qty--;
                 storage[storageNum].qty--;
                 console.log(storage[storageNum].qty)
+                state[num].totalPrice = +(state[num].totalPrice - state[num].price).toFixed(2);
+                storage[storageNum].totalPrice = +(storage[storageNum].totalPrice - storage[storageNum].price).toFixed(2);
+                ;
             }
 
             localStorage.setItem('prodCart', JSON.stringify(storage))
@@ -100,8 +109,8 @@ let cart = createSlice({
                 storage[storageNum].qty++;
 
             } else {                
-                state.push({id: action.payload.id, name: action.payload.name, stock: action.payload.stock, qty: 1, shortName: action.payload.shortName})
-                storage.push({id: action.payload.id, name: action.payload.name, stock: action.payload.stock, qty: 1,  shortName: action.payload.shortName })
+                state.push({id: action.payload.id, name: action.payload.name, stock: action.payload.stock, qty: 1, shortName: action.payload.shortName, price: action.payload.price, totalPrice: action.payload.price})
+                storage.push({id: action.payload.id, name: action.payload.name, stock: action.payload.stock, qty: 1,  shortName: action.payload.shortName, price: action.payload.price, totalPrice: action.payload.price })
             }
 
 
@@ -145,12 +154,14 @@ let cart = createSlice({
             localStorage.setItem('prodCart', JSON.stringify(storage))
 
 
-        }
+        },
+
+
     }
 
 
 
 })
 
-export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem } = cart.actions;
+export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem, toCheckOut } = cart.actions;
 export default cart
