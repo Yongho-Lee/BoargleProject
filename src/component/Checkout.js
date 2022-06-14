@@ -12,16 +12,16 @@ function Checkout() {
         <div className="body-margin">
             <h4> Checkout Page</h4>
 
-            <div class="container show-grid" style={{width: "900px"}}>
-                <div class="row">
-                    <div class="col-sm-9">Level 1: .col-sm-9
-                    <div class="row">
-                        <div class="col-xs-8 col-sm-6">
+            <div className="container show-grid" style={{width: "900px"}}>
+                <div className="row">
+                    <div className="col-sm-9">Level 1: .col-sm-9
+                    <div className="row">
+                        <div className="col-lg-8 col-sm-6 checkoutList">
                         {
                             <Listing list={state.cart} />
                         }
                         </div>
-                        <div class="col-xs-4 col-sm-6">
+                        <div className="col-lg-4 col-sm-6">
                             Level 2: .col-xs-4 .col-sm-6
                         </div>
                     </div>
