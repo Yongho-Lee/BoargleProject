@@ -5,7 +5,6 @@ import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { increaseCount, decreaseCount, loadPrvList, removeItem } from './../store/cartSlice.js';
-import { toCheckOut } from './../store/checkoutSlice.js';
 
 //import { changeName, changeAge } from './../store/userSlice.js';
 
@@ -146,8 +145,7 @@ function Cart() {
         </Table>
 
         <Button onClick={()=>{
-            navigate('/checkout');
-            dispatch(toCheckOut(state.cart))
+            navigate('/checkout');            
         }}> Checkout </Button>
         </>
             

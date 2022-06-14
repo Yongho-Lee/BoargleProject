@@ -9,13 +9,13 @@ function Listing(props) {
 
 
     return(
-        <Container>
-            <Row>
+        <Container className="list-Container">
+            <Row xs={1} md={5} className="list-Container">
         {
             listName.map(function(a,i){
                 return(
                     <Col sm key={i} className="product-info">
-                        <img className="product-image" onClick={() =>{navigate('../detail/'+listName[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + listName[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                        <img className="product-image img-responsive center-block" onClick={() =>{navigate('../detail/'+listName[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + listName[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
                         <p className="product-name"> {listName[i].name} </p>
                         <p className="product-price"> ${listName[i].price} CAD </p>
                         {stockCheck(listName[i].stock)}

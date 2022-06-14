@@ -157,11 +157,12 @@ let cart = createSlice({
         },
 
 
+
     }
 
 
 
 })
 
-export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem, toCheckOut } = cart.actions;
+export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem } = cart.actions;
 export default cart
