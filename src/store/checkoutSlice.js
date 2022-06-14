@@ -15,7 +15,6 @@ let checkout = createSlice({
         // }
         toCheckOut(state, action) {
             let checkOutStorage = action.payload;
-            
 
         }
 
