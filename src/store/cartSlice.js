@@ -156,6 +156,17 @@ let cart = createSlice({
 
         },
 
+        deleteCart(state, action){
+
+            // delete Cart states(local and redux states) when pay button is clicked.
+            // and move to med page. and redirect to home in 5s.
+            // nav, dispatch, deleteCart, useEffect, timer.
+            // additional works = server (for boardgame List, saving account, sign in, sign up, cart page(instead of local Storage), payment information.)
+            
+
+
+        }
+
 
 
     }
@@ -164,5 +175,5 @@ let cart = createSlice({
 
 })
 
-export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem } = cart.actions;
+export let { increaseCount, decreaseCount, addCartList, loadPrvList, removeItem, deleteCart } = cart.actions;
 export default cart
