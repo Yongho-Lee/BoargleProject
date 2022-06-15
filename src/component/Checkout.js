@@ -10,16 +10,29 @@ function Checkout() {
     let dispatch = useDispatch();
     let navigate = useNavigate();
 
-    let [total, setTotal] = useState(0);
-
+    let [ subTotal, setSubTotal] = useState(0);
+    let [ vat, setVat ] = useState(0);
+    let [ total, setTotal ] = useState(0);
     useEffect(()=>{
         let tmp = 0;
         for(let i in state.cart){ 
             tmp += +(state.cart[i].totalPrice).toFixed(2);                      
         }
-        setTotal(tmp.toFixed(2));
+        setSubTotal(tmp.toFixed(2));
+        setVat((tmp * 0.13).toFixed(2))
+        setTotal((tmp+vat).toFixed(2))
+
+
     },[])
 
+
+
+
+//     Checkout 버튼을 누르면 
+// state정보와 localStorage 정보가 같이 넘어감.
+// 거기서 정보를 취합해서 값을 알려주고 결제 정보 frame을 같이 띄워줌.
+// 거기서 확인을 누르면, 
+// state정보와 localStorage정보가 전부 지워짐.
 
 
         // 내가 만들었다가 지운거
@@ -100,8 +113,8 @@ function Checkout() {
     <div className="checkout-body">
     </div>
 
-    <div class="container d-lg-flex">
-            <div class="box-1 bg-light user">
+    <div className="checkbox-container d-lg-flex">
+            <div className="box-1 bg-light user">
                 {/* <div class="d-flex align-items-center mb-3">
                     <img src="https://images.pexels.com/photos/4925916/pexels-photo-4925916.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                         class="pic rounded-circle" alt=""/>
@@ -203,7 +216,7 @@ function Checkout() {
 
 
 {
-                            <Table>
+                            <Table className="box-inner-1">
 
                             <thead>
                                 <tr>
@@ -218,8 +231,8 @@ function Checkout() {
                 
                                     state.cart.map((a,i)=> 
                                     <tr key={i}>
-                                        <td> <img className="product-image" onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
-                                        <td style={{paddingTop:"30px"}}>{state.cart[i].name}</td>
+                                        <td> <img className="checkout-image" onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
+                                        <td style={{paddingTop:"30px"}} calssName="">{state.cart[i].name}</td>
                                         <td style={{paddingTop:"30px"}}>{state.cart[i].totalPrice}</td>
                                         <td style={{paddingTop:"30px"}}>
                                             <span className="cart-count">{state.cart[i].qty} </span> 
@@ -233,7 +246,7 @@ function Checkout() {
 
                                 <tr>
                                      <td className="td-total-price" colSpan={3}> Total Price : </td>
-                                     <td colSpan={1}> {total} </td>
+                                     <td colSpan={1}> {subTotal} </td>
                                 </tr>
                 
                 
@@ -246,65 +259,60 @@ function Checkout() {
             </div>
 
             
-            <div class="box-2">
-                <div class="box-inner-2">
+            <div className="box-2">
+                <div className="box-inner-2">
                     <div>
-                        <p class="fw-bold">Payment Details</p>
-                        <p class="dis mb-3">Complete your purchase by providing your payment details</p>
+                        <p className="fw-bold">Payment Details</p>
+                        <p className="dis mb-3">Complete your purchase by providing your payment details</p>
                     </div>
                     <form action="">
-                        <div class="mb-3">
-                            <p class="dis fw-bold mb-2">Email address</p>
-                            <input class="form-control" type="email" value="luke@skywalker.com"/>
+                        <div className="mb-3">
+                            <p className="dis fw-bold mb-2">Email address</p>
+                            <input className="form-control" type="email" placeholder="Boargle!@boargle.com"/>
                         </div>
                         <div>
-                            <p class="dis fw-bold mb-2">Card details</p>
-                            <div class="d-flex align-items-center justify-content-between card-atm border rounded">
-                                <div class="fab fa-cc-visa ps-3"></div>
-                                <input type="text" class="form-control" placeholder="Card Details"/>
-                                <div class="d-flex w-50">
-                                    <input type="text" class="form-control px-0" placeholder="MM/YY"/>
-                                    <input type="password" maxLength="3" class="form-control px-0" placeholder="CVV"/>
+                            <p className="dis fw-bold mb-2">Card details</p>
+                            <div className="d-flex align-items-center justify-content-between card-atm border rounded">
+                                <div className="fab fa-cc-visa ps-3"></div>
+                                <input type="text" className="form-control" placeholder="Card Details"/>
+                                <div className="d-flex w-50">
+                                    <input type="text" className="form-control px-0" placeholder="MM/YY"/>
+                                    <input type="password" maxLength="3" className="form-control px-0" placeholder="CVV"/>
                                 </div>
                             </div>
-                            <div class="my-3 cardname">
-                                <p class="dis fw-bold mb-2">Cardholder name</p>
-                                <input class="form-control" type="text"/>
+                            <div className="my-3 cardname">
+                                <p className="dis fw-bold mb-2">Cardholder name</p>
+                                <input className="form-control" type="text"/>
                             </div>
-                            <div class="address">
-                                <p class="dis fw-bold mb-3">Billing address</p>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected hidden>United States</option>
-                                    <option value="1">India</option>
+                            <div className="address">
+                                <p className="dis fw-bold mb-3">Billing address</p>
+                                <select className="form-select" aria-label="Default select example">
+                                    <option selected hidden>Canada</option>
+                                    <option value="1">United States</option>
                                     <option value="2">Australia</option>
-                                    <option value="3">Canada</option>
                                 </select>
-                                <div class="d-flex">
-                                    <input class="form-control zip" type="text" placeholder="ZIP"/>
-                                    <input class="form-control state" type="text" placeholder="State"/>
+                                <div className="d-flex">
+                                    <input className="form-control zip" type="text" placeholder="ZIP"/>
+                                    <input className="form-control state" type="text" placeholder="State"/>
                                 </div>
-                                <div class=" my-3">
-                                    <p class="dis fw-bold mb-2">VAT Number</p>
-                                    <div class="inputWithcheck">
-                                        <input class="form-control" type="text" value="GB012345B9"/>
-                                        <span class="fas fa-check"></span>
-
-                                    </div>
+                                <div className=" my-3">
+                                    <label className="dis fw-bold mb-2" for="fname"> Shipping Address </label>
+                                        <input className="form-control" type="text" id="fname" name="fname" placeholder="Shipping address"/>
                                 </div>
-                                <div class="d-flex flex-column dis">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div className="d-flex flex-column dis">
+                                    <div className="d-flex align-items-center justify-content-between mb-2">
                                         <p>Subtotal</p>
-                                        <p><span class="fas fa-dollar-sign"></span> {total}</p>
+                                        <p><span className="fas fa-dollar-sign"></span> {subTotal}</p>
                                     </div>
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p>VAT<span>(20%)</span></p>
-                                        <p><span class="fas fa-dollar-sign"></span>2.80</p>
+                                    <div className="d-flex align-items-center justify-content-between mb-2">
+                                        <p>Taxes (estimated) <span>(13%)</span></p>
+                                        <p><span className="fas fa-dollar-sign"></span>{vat}</p>
                                     </div>
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="fw-bold">Total</p>
-                                        <p class="fw-bold"><span class="fas fa-dollar-sign"></span> 어쨋든가격</p>
+                                    <div className="d-flex align-items-center justify-content-between mb-2">
+                                        <p className="fw-bold">{total}</p>
+                                        <p className="fw-bold"><span class="fas fa-dollar-sign"></span> 어쨋든가격</p>
                                     </div>
-                                    <div class="btn btn-primary mt-2">Pay<span class="fas fa-dollar-sign px-1"></span>35.80
+                                    <div className="btn btn-primary mt-2">Pay<span className="fas fa-dollar-sign px-1"></span>{total}
                                     </div>
                                 </div>
                             </div>
