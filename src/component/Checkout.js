@@ -13,6 +13,7 @@ function Checkout() {
     let [ subTotal, setSubTotal] = useState(0);
     let [ vat, setVat ] = useState(0);
     let [ total, setTotal ] = useState(0);
+
     useEffect(()=>{
         let tmp = 0;
         for(let i in state.cart){ 
@@ -20,7 +21,8 @@ function Checkout() {
         }
         setSubTotal(tmp.toFixed(2));
         setVat((tmp * 0.13).toFixed(2))
-        setTotal((tmp+vat).toFixed(2))
+        let totalTmp = +(tmp + vat).toFixed(2);
+        setTotal(totalTmp)
 
 
     },[])
@@ -232,7 +234,7 @@ function Checkout() {
                                     state.cart.map((a,i)=> 
                                     <tr key={i}>
                                         <td> <img className="checkout-image" onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
-                                        <td style={{paddingTop:"30px"}} calssName="">{state.cart[i].name}</td>
+                                        <td style={{paddingTop:"30px"}} className="">{state.cart[i].name}</td>
                                         <td style={{paddingTop:"30px"}}>{state.cart[i].totalPrice}</td>
                                         <td style={{paddingTop:"30px"}}>
                                             <span className="cart-count">{state.cart[i].qty} </span> 
@@ -286,17 +288,18 @@ function Checkout() {
                             </div>
                             <div className="address">
                                 <p className="dis fw-bold mb-3">Billing address</p>
-                                <select className="form-select" aria-label="Default select example">
-                                    <option selected hidden>Canada</option>
-                                    <option value="1">United States</option>
-                                    <option value="2">Australia</option>
+                                <select className="form-select" aria-label="Default select example" defaultValue={"default"}>
+                                    <option value={"default"} disabled hidden>Canada</option>
+                                    <option value="1">Canada</option>
+                                    <option value="2">United States</option>
+                                    <option value="3">Australia</option>
                                 </select>
                                 <div className="d-flex">
                                     <input className="form-control zip" type="text" placeholder="ZIP"/>
                                     <input className="form-control state" type="text" placeholder="State"/>
                                 </div>
                                 <div className=" my-3">
-                                    <label className="dis fw-bold mb-2" for="fname"> Shipping Address </label>
+                                    <label className="dis fw-bold mb-2" htmlFor="fname"> Shipping Address </label>
                                         <input className="form-control" type="text" id="fname" name="fname" placeholder="Shipping address"/>
                                 </div>
                                 <div className="d-flex flex-column dis">
@@ -309,8 +312,8 @@ function Checkout() {
                                         <p><span className="fas fa-dollar-sign"></span>{vat}</p>
                                     </div>
                                     <div className="d-flex align-items-center justify-content-between mb-2">
-                                        <p className="fw-bold">{total}</p>
-                                        <p className="fw-bold"><span class="fas fa-dollar-sign"></span> 어쨋든가격</p>
+                                        <p className="fw-bold">Total</p>
+                                        <p className="fw-bold"><span className="fas fa-dollar-sign"></span> {total}</p>
                                     </div>
                                     <div className="btn btn-primary mt-2">Pay<span className="fas fa-dollar-sign px-1"></span>{total}
                                     </div>

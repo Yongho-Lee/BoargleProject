@@ -171,6 +171,18 @@
   font-weight: 600;
 }
 
+.address .form-control.zip {
+  border-radius: 0;
+  border-bottom-left-radius: 10px;
+
+}
+
+.address .form-control.state {
+  border-radius: 0;
+  border-bottom-right-radius: 10px;
+
+}
+
 .dis {
   font-size: 12px;
   font-weight: 500;
@@ -243,8 +255,6 @@
 
 /* something */
 /* 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
 
 
 .checkout-body {
@@ -326,17 +336,7 @@ input[type="radio"] {
 
 
 
-.address .form-control.zip {
-    border-radius: 0;
-    border-bottom-left-radius: 10px;
 
-}
-
-.address .form-control.state {
-    border-radius: 0;
-    border-bottom-right-radius: 10px;
-
-}
 
 
 

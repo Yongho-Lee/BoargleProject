@@ -52,7 +52,6 @@ function App() {
       storage = JSON.parse(storage)
       console.log("In cart Items here: " + localStorage.getItem('prodCart'))
       dispatch(loadPrvList(storage))
-
     }
 
 
