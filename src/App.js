@@ -20,7 +20,7 @@ import Detail from './component/Detail.js'
 import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
 import Checkout from './component/Checkout'
-
+import Confirm from './component/Confirm'
 
 //import board games list js
 import boardGameList from './js/boardGameList.js'
@@ -125,6 +125,7 @@ function App() {
 
         <Route path="/cart" element = {<Cart />} />
         <Route path="/checkout" element ={<Checkout/>} />
+        <Route path="/confirm" element ={<Confirm/>} />
 
         <Route path="*" element={<NotFound/>} />
         

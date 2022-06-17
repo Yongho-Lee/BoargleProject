@@ -13,6 +13,12 @@
 
 .list-Container{
   grid-template-columns: repeat(auto-fill, minmax(25%, auto));;
+  
+}
+
+.product-info{    
+  border: 1px solid #444444;
+  border-collapse: collapse;
 }
 
 .product-info p, img{

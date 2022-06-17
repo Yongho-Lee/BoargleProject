@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 
 function Checkout() {
 
     let state = useSelector((state)=>state);
-    let dispatch = useDispatch();
+    //let dispatch = useDispatch();
     let navigate = useNavigate();
 
     let [ subTotal, setSubTotal] = useState(0);
@@ -270,7 +270,7 @@ function Checkout() {
                     <form action="">
                         <div className="mb-3">
                             <p className="dis fw-bold mb-2">Email address</p>
-                            <input className="form-control" type="email" placeholder="Boargle!@boargle.com"/>
+                            <input className="form-control" type="email" placeholder="Boargle!@boargle.com" required/>
                         </div>
                         <div>
                             <p className="dis fw-bold mb-2">Card details</p>
@@ -278,13 +278,13 @@ function Checkout() {
                                 <div className="fab fa-cc-visa ps-3"></div>
                                 <input type="text" className="form-control" placeholder="Card Details"/>
                                 <div className="d-flex w-50">
-                                    <input type="text" className="form-control px-0" placeholder="MM/YY"/>
-                                    <input type="password" maxLength="3" className="form-control px-0" placeholder="CVV"/>
+                                    <input type="text" className="form-control px-0" placeholder="MM/YY" required/>
+                                    <input type="password" maxLength="3" className="form-control px-0" placeholder="CVV" required/>
                                 </div>
                             </div>
                             <div className="my-3 cardname">
                                 <p className="dis fw-bold mb-2">Cardholder name</p>
-                                <input className="form-control" type="text"/>
+                                <input className="form-control" type="text" required/>
                             </div>
                             <div className="address">
                                 <p className="dis fw-bold mb-3">Billing address</p>
@@ -300,7 +300,7 @@ function Checkout() {
                                 </div>
                                 <div className=" my-3">
                                     <label className="dis fw-bold mb-2" htmlFor="fname"> Shipping Address </label>
-                                        <input className="form-control" type="text" id="fname" name="fname" placeholder="Shipping address"/>
+                                        <input className="form-control" type="text" id="fname" name="fname" placeholder="Shipping address" required/>
                                 </div>
                                 <div className="d-flex flex-column dis">
                                     <div className="d-flex align-items-center justify-content-between mb-2">
@@ -315,7 +315,7 @@ function Checkout() {
                                         <p className="fw-bold">Total</p>
                                         <p className="fw-bold"><span className="fas fa-dollar-sign"></span> {total}</p>
                                     </div>
-                                    <div className="btn btn-primary mt-2">Pay<span className="fas fa-dollar-sign px-1"></span>{total}
+                                    <div className="btn btn-primary mt-2" onClick={()=>{ navigate('/confirm')}}>Pay<span className="fas fa-dollar-sign px-1"></span>{total}
                                     </div>
                                 </div>
                             </div>
