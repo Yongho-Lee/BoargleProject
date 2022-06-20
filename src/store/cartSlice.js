@@ -74,7 +74,10 @@ let cart = createSlice({
             } else{
                 state[num].qty--;
                 storage[storageNum].qty--;
+                console.log("storage[storageNum]")
                 console.log(storage[storageNum].qty)
+                console.log("state[num].qty")
+                console.log(state[num].qty)
                 state[num].totalPrice = +(state[num].totalPrice - state[num].price).toFixed(2);
                 storage[storageNum].totalPrice = +(storage[storageNum].totalPrice - storage[storageNum].price).toFixed(2);
                 ;

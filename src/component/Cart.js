@@ -21,7 +21,6 @@ function Cart() {
     //console.log(state.cart)
     let dispatch = useDispatch();
 
-
     // useEffect(()=>{
     //     let storage = localStorage.getItem('prodCart')
     //     storage = JSON.parse(storage)        
@@ -104,7 +103,6 @@ function Cart() {
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>remove</th>
                 </tr>
             </thead>
             <tbody>
@@ -115,22 +113,22 @@ function Cart() {
                         <td> <img className="cart-image" onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
                         <td style={{paddingTop:"30px"}}>{state.cart[i].name}</td>
                         <td style={{paddingTop:"30px"}}>{state.cart[i].totalPrice}</td>
-                        <td style={{paddingTop:"30px"}}> <button onClick={()=>{
-                                    dispatch(decreaseCount(state.cart[i].id))
+                        <td style={{paddingTop:"30px"}}> <Button variant="light" size="sm" onClick={()=>{
+                                    dispatch(decreaseCount(state.cart[i].id));
                                 }}>
                                     -
-                            </button>
-                            <span className="cart-count">{state.cart[i].qty} </span> 
-                            <button onClick={()=>{
+                            </Button>
+                            <span className="cart-count">{state.cart[i].qty}</span>
+                            <Button variant="light" size="sm" onClick={()=>{
                                     dispatch(increaseCount(state.cart[i].id))
                                 }}>
                                     +
-                            </button>
-                        </td>
-                        <td style={{paddingTop:"30px"}}> <button onClick={()=>{
+                            </Button>
+                            <br />
+                            <span style={{cursor: "pointer"}} onClick={()=>{
                                     dispatch(removeItem(state.cart[i].id))
-                            }}> x 
-                            </button>
+                            }}> remove 
+                            </span>
                         </td>
                     </tr>
                     
