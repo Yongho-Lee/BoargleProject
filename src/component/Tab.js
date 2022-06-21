@@ -2,8 +2,9 @@ import { useEffect, useState} from 'react';
 import { Nav } from 'react-bootstrap';
 
 
-function Tab() {
+function Tab(props) {
 
+    let games = props.games;
 
     let [tab, setTab] = useState(1);
 
@@ -13,7 +14,7 @@ function Tab() {
         <div className="detail_nav" style={{ marginTop:"100px"}}>
             <Nav justify variant="tabs" defaultActiveKey="link-1">
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1" onClick={()=>{ setTab(1)}}>Information</Nav.Link>
+                    <Nav.Link eventKey="link-1" onClick={()=>{ setTab(1 )}}>Information</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link eventKey="link-2" onClick={()=>{ setTab(2)}}>Reviews</Nav.Link>
@@ -26,7 +27,8 @@ function Tab() {
             </Nav>
         </div>
             
-            <TabComponent tab={tab}/>
+            <TabComponent tab={tab} games={games}/>
+
         </>
  
 
@@ -39,7 +41,7 @@ function Tab() {
 }
 
 
-function TabComponent({tab}){
+function TabComponent({tab, games}){
 
     let [fade, setFade] = useState('');
 
@@ -55,7 +57,16 @@ function TabComponent({tab}){
     return (
         [
             null,
-        <div className={"start " + fade}> <h4> Information </h4></div>,
+        <div className={"start " + fade}> 
+            <h4> {games.name} </h4>
+            <span>
+                <p> {games.desc} </p>
+                <p> Publisher: {games.publisher}</p>
+                <p> Best player: {games.bestPlayer}</p>
+            </span>
+
+        
+        </div>,
         <div className={"start " + fade}> <h4> Reviews </h4></div>,
         <div className={"start " + fade}> <h4> Not service yet </h4></div>    
     ][tab]

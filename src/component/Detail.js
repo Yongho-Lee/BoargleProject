@@ -98,7 +98,7 @@ function Detail(props) {
             </div> 
         </div>
 
-        <Tab/>
+        <Tab games={games[index]}/>
         </>
     )
 }

@@ -116,7 +116,8 @@ function Checkout() {
     </div>
 
     <div className="checkbox-container d-lg-flex">
-            <div className="box-1 bg-light user">
+            <div className="box-1 bg-light user"> {/*bg-light 지울지 말지 선택 해야함.*/}
+            
                 {/* <div class="d-flex align-items-center mb-3">
                     <img src="https://images.pexels.com/photos/4925916/pexels-photo-4925916.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                         class="pic rounded-circle" alt=""/>

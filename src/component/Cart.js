@@ -95,12 +95,11 @@ function Cart() {
 
             :
             <>
-            <Table>
+            <Table className="cart-table-container">
 
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Product Name</th>
+                    <th className="cart-th-productName" colSpan="2" >Product</th>
                     <th>Price</th>
                     <th>Quantity</th>
                 </tr>
@@ -142,9 +141,9 @@ function Cart() {
             </tbody>
         </Table>
 
-        <Button onClick={()=>{
+        <button className="btn-to-checkOut" onClick={()=>{
             navigate('/checkout');            
-        }}> Checkout </Button>
+        }}> Checkout </button>
         </>
             
         }
