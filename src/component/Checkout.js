@@ -223,7 +223,7 @@ function Checkout() {
 
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th></th>
                                     <th>Product Name</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
