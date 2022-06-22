@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
+//axios ,ajax 필요함
 function Confirm() {
 
     let state = useSelector((state)=>state);
