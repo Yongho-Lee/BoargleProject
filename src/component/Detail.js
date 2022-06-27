@@ -76,7 +76,7 @@ function Detail(props) {
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-                    <img src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + games[index].shortName + ".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+id} style={{marginTop:"40px"}}/>
+                    <img src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + games[index].shortName + ".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+id} style={{marginTop:"40px"}}/>
                 </div>
                 <div className="col-md-6 mt-4">
                     <h4 className="pt-5">{games[index].name}</h4>

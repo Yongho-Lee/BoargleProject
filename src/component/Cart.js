@@ -109,7 +109,7 @@ function Cart() {
 
                     state.cart.map((a,i)=> 
                     <tr key={i}>
-                        <td> <img className="cart-image" style={{cursor: "pointer"}} onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
+                        <td> <img className="cart-image" style={{cursor: "pointer"}} onClick={() =>{navigate('../products/detail/'+state.cart[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + state.cart[i].shortName +".jpg?raw=true"} width="130px" height="100px" alt={'bgimage'+i} /> </td>
                         <td style={{paddingTop:"30px"}}>{state.cart[i].name}</td>
                         <td style={{paddingTop:"30px"}}>{state.cart[i].totalPrice}</td>
                         <td style={{paddingTop:"30px"}}> <Button variant="light" size="sm" onClick={()=>{
