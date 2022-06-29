@@ -1,7 +1,6 @@
 import './App.css';
 
 //react library
-import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //import products components
@@ -21,6 +20,7 @@ import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
 import Checkout from './component/Checkout'
 import Confirm from './component/Confirm'
+import Topnavbar from './component/Topnavbar';
 
 //import board games list js
 import boardGameList from './js/boardGameList.js'
@@ -74,28 +74,7 @@ function App() {
   return (
     <div className="App">   
        {/* navbar */}
-      <Navbar className="navbar" bg="light" expand="lg" fixed="top">
-        <Container>
-          <Navbar.Brand href="/">BoarGle!</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/"> Home </Nav.Link>
-              <Nav.Link onClick={()=>{ navigate('/products/arrivals')}}> New Arrivals </Nav.Link>
-              <Nav.Link onClick={()=>{ navigate('/products/in-stock')}}> All in-Stock items </Nav.Link>
-              <NavDropdown title="Shop" id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={()=>{ navigate('/products/all-games')}}>All Board Games</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={()=>{ navigate('/products/best-family')}}>Best family Games</NavDropdown.Item>
-                <NavDropdown.Item onClick={()=>{ navigate('/products/best-2players')}}>Best 2 Players Games</NavDropdown.Item>
-                <NavDropdown.Item onClick={()=>{ navigate('/products/best-strategy')}}>Best strategy</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/cart"> 🛒 Cart</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <Topnavbar />
       
 
 
