@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Card(props){
     let navigate = useNavigate();
