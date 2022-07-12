@@ -15,12 +15,13 @@ import InStock from './component/In-stock.js'
 
 //import other page components
 import Card from './component/Card.js'
+import Jumbotron from './component/Jumbotron.js'
 import Detail from './component/Detail.js'
 import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
 import Checkout from './component/Checkout'
 import Confirm from './component/Confirm'
-import Topnavbar from './component/Topnavbar';
+import TopNavBar from './component/Topnavbar';
 
 //import board games list js
 import boardGameList from './js/boardGameList.js'
@@ -74,7 +75,7 @@ function App() {
   return (
     <div className="App">   
        {/* navbar */}
-      <Topnavbar />
+      <TopNavBar />
       
 
 
@@ -85,7 +86,7 @@ function App() {
         <Route path="/" element={
           <>
             {/* jumbotron */}
-            <div className="main-bg"> </div>      
+            <Jumbotron />
             {/* lists */}
             <Card lists={lists} />
 
