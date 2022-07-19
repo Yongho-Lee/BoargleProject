@@ -21,6 +21,11 @@
   border-collapse: collapse;
 } */
 
+.slick-prev::before,
+.slick-next::before {
+  opacity: 0;
+  display: none;
+}
 
 
 /*slide jumbo*/
