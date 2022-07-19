@@ -88,7 +88,7 @@ function App() {
             {/* jumbotron */}
             <Jumbotron />
             {/* lists */}
-            <Card lists={lists} />
+            <Card lists={lists} allGames={games} />
 
           </>
         }/>

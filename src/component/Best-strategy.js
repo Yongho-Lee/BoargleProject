@@ -5,12 +5,12 @@ function BestStrategy(props) {
 
     let bstStrategy = [];
     for(let i in games){                
-        if(findFamily(games[i].type)){
+        if(findStrategy(games[i].type)){
             bstStrategy.push(games[i])
         }
     }
 
-    function findFamily(games){
+    function findStrategy(games){
         if(games.indexOf('strategy') > -1){
             return true
         } else { return false }

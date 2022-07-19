@@ -1,53 +1,87 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import stockCheck from '../js/stockCheck';
+
 import axios from 'axios';
 
 function Card(props){
     let navigate = useNavigate();
     let lists = props.lists;
+    let games = props.allGames;
 
+
+    let bstStrategy = [];
+    for(let i in games){                
+        if(findStrategy(games[i].bestSelling)){
+            bstStrategy.push(games[i])
+        }
+    }
+
+    function findStrategy(games){
+        if(games.indexOf('strategy') > -1){
+            return true
+        } else { return false }
+    }
+
+
+
+    let bstFamily = [];
+    for(let i in games){                
+        if(findFamily(games[i].type)){
+            bstFamily.push(games[i])
+        }
+    }
+
+    function findFamily(games){
+      if(games.indexOf('family') > -1){
+          return true
+      } else { return false }
+  }
+  
+  
     return(
       <>
-        <p className="card-newArrivals"> New Arrivals Here </p>
-            
-        <Container>
-          <Row>
+
+        <p> Recently Best Selling Games</p>
+        <p className="card-newArrivals"> Strategy Games </p>
+
+        <Container className="list-Container">
+            <Row xs={1} md={4} lg={5} className="list-Container">
         {
-          lists[0].data.map(function(a,i){
-            let bcd = lists[0].data[i].id;
-            let name = lists[0].data[i].shortName;
-
-            return(
-                <Col sm key={i}>           
-                    <img onClick={() =>{navigate('./products/detail/'+bcd)}} src={require("../img/bgImage/"+ name +".jpg?raw=true")} width="250px" height="200px" alt={'bgimage'+i} className="product-image"/>
-                    <h4> {lists[0].data[i].name} </h4>
-                    <p> {lists[0].data[i].price} </p>
-                </Col>                     
-            )
-          })
-  
+            bstStrategy.map(function(a,i){
+                return(
+                    <Col sm key={i} className="product-info">
+                        <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                        <p className="product-name"> {bstStrategy[i].name} </p>                                    
+                        <p className="product-price"> ${bstStrategy[i].price} CAD </p>
+                        {stockCheck(bstStrategy[i].stock)}
+                    </Col>
+                )
+            })
         }
-          </Row>
+            </Row>
+
           <Row>
-            <p> Best Selling Family Games </p>
+            <p> Family Games </p>
 
           </Row>
           
-          <Row>
-          {/* {
-            <BestFamily lists={lists}/>
-  
-          } */}
-
-          <Col sm key={1}>           
-                    <img onClick={() =>{navigate('./products/detail/29877030712')}} src={require("../img/bgImage/catan.jpg?raw=true")} width="250px" height="200px" alt={'bestGame1'} className="product-image" />
-                    <h4> {lists[0].data[5].name} </h4>
-                    <p> {lists[0].data[5].price} </p>
-          </Col>     
-          
-
+          <Row xs={1} md={4} lg={5} className="list-Container">
+        {
+            bstFamily.map(function(a,i){
+                return(
+                    <Col sm key={i} className="product-info">
+                        <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstFamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstFamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                        <p className="product-name"> {bstFamily[i].name} </p>                                    
+                        <p className="product-price"> ${bstFamily[i].price} CAD </p>
+                        {stockCheck(bstFamily[i].stock)}
+                    </Col>
+                )
+            })
+        }
             </Row>
         </Container>
+        
      
 
     </>

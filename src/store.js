@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import user from './store/userSlice.js'
 import cart from './store/cartSlice.js'
+import arrival from './store/arrivalSlice.js'
 
 
 
@@ -16,6 +17,7 @@ export default configureStore({
 
         user : user.reducer,
         cart : cart.reducer,
+        arrival : arrival.reducer,
 
     }
 })

@@ -5,7 +5,7 @@ function Arrivals(props) {
     const games = props.allGames;
     
     let now = new Date();	// today date
-    let twoMonthAgo = new Date(now.setMonth(now.getMonth() - 2));	// month ago
+    let twoMonthAgo = new Date(now.setMonth(now.getMonth() - 2));	// 2month ago
 
 
 
