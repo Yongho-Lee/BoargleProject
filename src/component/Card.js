@@ -1,11 +1,15 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+
 import stockCheck from '../js/stockCheck';
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "../slick-theme.css";
 
 import Slider from "react-slick";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function Card(props){
     let navigate = useNavigate();
@@ -44,17 +48,19 @@ function Card(props){
     const settings = {
         dots: true,
         arrows: true,
-        infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 0,
+        nextArrow: <button class="Prev"><i class="fa-solid fa-arrow-left-to-line"></i></button>,
+        // prevArrow: <SamplePrevArrow />,
         responsive: [
             {
               breakpoint: 1024,
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
+                arrows: true,
                 infinite: true,
                 dots: true
               }
@@ -81,71 +87,63 @@ function Card(props){
       <>
 
         <p> Recently Best Selling Games</p>
-        <p className="card-newArrivals"> Strategy Games </p>
-
-        <Container className="list-Container">
-            <Row xs={1} md={4} lg={5} className="list-Container">
-        {
-            bstStrategy.map(function(a,i){
-                return(
-                    <Col sm key={i} className="product-info">
-                        <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
-                        <p className="product-name"> {bstStrategy[i].name} </p>                                    
-                        <p className="product-price"> ${bstStrategy[i].price} CAD </p>
-                        {stockCheck(bstStrategy[i].stock)}
-                    </Col>
-                )
-            })
-        }
-            </Row>
-
-          <Row>
-            <p> Family Games </p>
-
-          </Row>
-          
-          <Row xs={1} md={4} lg={5} className="list-Container">
-        {
-            bstFamily.map(function(a,i){
-                return(
-                    <Col sm key={i} className="product-info">
-                        <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstFamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstFamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
-                        <p className="product-name"> {bstFamily[i].name} </p>                                    
-                        <p className="product-price"> ${bstFamily[i].price} CAD </p>
-                        {stockCheck(bstFamily[i].stock)}
-                    </Col>
-                )
-            })
-        }
-            </Row>
-        </Container>
-        
 
 
-        <div>
-            <h2> Single Item</h2>
-            <Slider {...settings}>
-            <div>
-                <h3>1</h3>
+        <div className="container list-Container">
+          <div className="card-box strategy-card">
+            <div className='left-card' >
+                  <p className="card-newArrivals"> Strategy Games </p>
             </div>
-            <div>
-                <h3>2</h3>
+            <div className='right-card' >
+                <Slider {...settings}>
+
+                {
+                    bstStrategy.map(function(a,i){
+                        return(
+                            <div key={i} className="product-info sm">
+                                <img className="card-product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"}  alt={'bgimage'+i} />
+                                <p className="product-name"> {bstStrategy[i].name} </p>                                    
+                                <p className="product-price"> ${bstStrategy[i].price} CAD </p>
+                                {stockCheck(bstStrategy[i].stock)}
+                            </div>
+                        )
+                    })
+                }
+
+                </Slider>
             </div>
-            <div>
-                <h3>3</h3>
+          </div>
+
+          <div className="card-box family-card">
+            <div className='left-card' >
+              <p className="card-newArrivals" style={{marginTop: "80px", marginBottom:"40px"}}>
+                  Family Games
+              </p>
             </div>
-            <div>
-                <h3>4</h3>
+            <div className='right-card' >
+              <Slider {...settings}>
+
+                {
+                    bstFamily.map(function(a,i){
+                        return(
+                            <Col key={i} className="product-info sm">
+                                <img className="card-product-image" onClick={() =>{navigate('./products/detail/'+bstFamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstFamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                                <p className="product-name"> {bstFamily[i].name} </p>                                    
+                                <p className="product-price"> ${bstFamily[i].price} CAD </p>
+                                {stockCheck(bstFamily[i].stock)}
+                            </Col>
+                        )
+                    })
+                }
+                </Slider>
+              </div>
             </div>
-            <div>
-                <h3>5</h3>
-            </div>
-            <div>
-                <h3>6</h3>
-            </div>
-            </Slider>
+
         </div>
         
+
+
+
 
     </>
 
@@ -204,3 +202,101 @@ function Card(props){
   
   
   */
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+
+        
+      <button
+        className={className}
+        style={{ ...style, background: "rgb(44,183,248)"}}
+        onClick={onClick}
+      > </button> 
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style,  background: "rgb(44,183,248)" }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+
+
+/*  슬릭 이전에 원본임.
+  <>
+
+  <p> Recently Best Selling Games</p>
+  <p className="card-newArrivals"> Strategy Games </p>
+
+  <Container className="list-Container">
+      <Row xs={1} md={4} lg={5} className="list-Container">
+  {
+      bstStrategy.map(function(a,i){
+          return(
+              <Col sm key={i} className="product-info">
+                  <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                  <p className="product-name"> {bstStrategy[i].name} </p>                                    
+                  <p className="product-price"> ${bstStrategy[i].price} CAD </p>
+                  {stockCheck(bstStrategy[i].stock)}
+              </Col>
+          )
+      })
+  }
+      </Row>
+
+    <Row>
+      <p> Family Games </p>
+
+    </Row>
+    
+    <Row xs={1} md={4} lg={5} className="list-Container">
+  {
+      bstFamily.map(function(a,i){
+          return(
+              <Col sm key={i} className="product-info">
+                  <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstFamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstFamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                  <p className="product-name"> {bstFamily[i].name} </p>                                    
+                  <p className="product-price"> ${bstFamily[i].price} CAD </p>
+                  {stockCheck(bstFamily[i].stock)}
+              </Col>
+          )
+      })
+  }
+      </Row>
+
+      <div>
+      <h2> Single Item</h2>
+      <Slider {...settings}>
+
+  {
+      bstStrategy.map(function(a,i){
+          return(
+              <div sm key={i} className="product-info">
+                  <img className="product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
+                  <p className="product-name"> {bstStrategy[i].name} </p>                                    
+                  <p className="product-price"> ${bstStrategy[i].price} CAD </p>
+                  {stockCheck(bstStrategy[i].stock)}
+              </div>
+          )
+      })
+  }
+
+      </Slider>
+  </div>
+  
+  </Container>
+  
+
+
+
+
+</>
+
+*/

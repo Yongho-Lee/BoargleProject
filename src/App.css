@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;  
 }
@@ -11,6 +13,23 @@
   margin-top: 60px;
 }
 
+/* card, slicks ... */
+.container{
+  max-width: 1080px;
+}
+.left-card{
+  text-align: left;
+}
+
+.card-box{
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  padding-bottom: 5px;
+}
+/* */
+
+
+
 .list-Container{
   grid-template-columns: repeat(auto-fill, minmax(25%, auto));;
   
@@ -21,11 +40,6 @@
   border-collapse: collapse;
 } */
 
-.slick-prev::before,
-.slick-next::before {
-  opacity: 0;
-  display: none;
-}
 
 
 /*slide jumbo*/
@@ -104,7 +118,7 @@ ul.imgs li{
 /*slide jumbo end*/
 
 
-
+/* Slick */
 
 
 
@@ -115,7 +129,7 @@ ul.imgs li{
   overflow: hidden;
 }
 
-
+font
 
 
 
@@ -132,6 +146,12 @@ ul.imgs li{
   width: 250px;
   height: 200px;
   border-radius: 16%;
+}
+
+.card-product-image{
+  width:180px;
+  height: 130px;
+  border-radius: 20%;
 }
 
 .product-price{
@@ -205,7 +225,6 @@ ul.imgs li{
 }
 
 .card-newArrivals{
-
   margin: 50px;
 }
 
@@ -430,7 +449,4 @@ ul.imgs li{
   }  
   
 }
-
-
-
 

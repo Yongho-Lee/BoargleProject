@@ -218,7 +218,7 @@ function Checkout() {
             </div> */}
 
 
-{
+                    {
                             <Table className="box-inner-1">
 
                             <thead>
