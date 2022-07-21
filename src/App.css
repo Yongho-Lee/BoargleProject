@@ -17,23 +17,121 @@
 .container{
   max-width: 1080px;
 }
-.left-card{
+
+.left-text{  
+  padding: 30px;
+  max-width: 300px;
   text-align: left;
+  grid-column: 1;  
+  grid-row:1;
+  border-radius: 15px;
+  /*position: relative  -- 글자 포지션 가운데로 잡을 때 씀.*/
+
+  /*background-color: white;*/
+
+}
+.left-text p, h2{
+  margin-bottom: 10px;
+  font-size:24px;
+  font-weight: 700;
+}
+.left-text Button{
+  margin-top: 8px;
+}
+
+.left-text-cover{
+  width: 350px;
+  height: 200px;
+  /*background-color: #d18047;*/
+  opacity: 0.80;
+
+  border-radius: 15px;
+
+  /*
+  position: absolute;
+  top: 50%;
+	left: 50%;
+  transform: translate( -50%, -50% );
+
+  글자 박스 안에 위아래 가운데로 맞출 때 씀. (상위 div가 relative여야 함)
+  */
 }
 
 .card-box{
   background-color: #f0f0f0;
   border-radius: 30px;
+  padding-top: 5px;
   padding-bottom: 5px;
+  font-size:15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 50px;
+
 }
-/* */
+
+.card-box p{
+  font-size:15px;
+  font-weight: 500;
+  margin-bottom: 10px;  
+}
+.list-Container{
+  max-width: 1080px;
+  /*background-color: black;*/
+  padding: 5px;
+}
+
+/**/
+
+.right-card{
+  background-color: white;
+}
+.strategy-card{
+  background-color: white;
+}
+.family-card{
+  background-color: white;
+}
+
+.family-container{
+  grid-row:1;
+  background-color: white;
+  border-radius: 15px;
+}
+.strategy-container{
+  grid-row:1;  
+  background-color: white;
+  border-radius: 15px;
+}
+/**/
+
+.card-container{
+  max-width: 1400px;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  
+  background-color: gray;
+  margin: auto;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 400px 900px;
+  /* grid-template-columns: repeat(2, 1fr 2fr); */
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.testInsideContainer{
+  background-color: blue;
+  padding: 5px;
+  margin-left: 0px;
+}
 
 
-
+/* 
 .list-Container{
   grid-template-columns: repeat(auto-fill, minmax(25%, auto));;
   
-}
+} */
 
 /* .product-info{    
   border: 1px solid #444444;
@@ -116,32 +214,6 @@ ul.imgs li{
 }
 
 /*slide jumbo end*/
-
-
-/* Slick */
-.card-box{
-  font-size:15px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  margin-top: 50px;
-}
-
-.card-box p{
-  font-size:15px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  
-}
-
-.left-card{
-  padding-top:15px;
-  padding-left: 20px;
-  color: chocolate;  
-}
-
-.left-card p{
-  font-weight: 700;
-}
 
 
 
