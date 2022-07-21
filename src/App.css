@@ -119,6 +119,29 @@ ul.imgs li{
 
 
 /* Slick */
+.card-box{
+  font-size:15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.card-box p{
+  font-size:15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  
+}
+
+.left-card{
+  padding-top:15px;
+  padding-left: 20px;
+  color: chocolate;  
+}
+
+.left-card p{
+  font-weight: 700;
+}
 
 
 
@@ -129,7 +152,7 @@ ul.imgs li{
   overflow: hidden;
 }
 
-font
+
 
 
 
@@ -224,9 +247,7 @@ font
   margin-bottom: 50px;  
 }
 
-.card-newArrivals{
-  margin: 50px;
-}
+
 
 /* Detail - Tab */
 .start {

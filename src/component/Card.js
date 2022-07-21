@@ -116,7 +116,7 @@ function Card(props){
 
           <div className="card-box family-card">
             <div className='left-card' >
-              <p className="card-newArrivals" style={{marginTop: "80px", marginBottom:"40px"}}>
+              <p className="card-newArrivals">
                   Family Games
               </p>
             </div>
