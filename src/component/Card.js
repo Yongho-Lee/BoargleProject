@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import {Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -8,7 +8,6 @@ import "../slick-theme.css";
 
 import Slider from "react-slick";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function Card(props){
@@ -94,7 +93,7 @@ function Card(props){
           <div className='left-text' >
             <div className="left-text-cover">
               <h2 className="card-newArrivals"> Strategy Games </h2>
-              <Button> Shop Strategy Games </Button>
+              <button className="card-category-btn strategy-card-btn" onClick={()=>{ navigate('/products/best-strategy')}}> Shop Strategy Games </button>
             </div>
           </div>
 
@@ -128,6 +127,7 @@ function Card(props){
             <div className='left-text' >
               <div className="left-text-cover">
                 <p className="card-newArrivals"> Family Games </p>
+                <button className="card-category-btn family-card-btn" onClick={()=>{ navigate('/products/best-family')}}> Shop Family Games </button>
               </div>
             </div>
           <div className="container list-Container family-container">
@@ -216,29 +216,29 @@ function Card(props){
   
   */
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
+// function SampleNextArrow(props) {
+//     const { className, style, onClick } = props;
+//     return (
 
         
-      <button
-        className={className}
-        style={{ ...style, background: "rgb(44,183,248)"}}
-        onClick={onClick}
-      > </button> 
-    );
-  }
+//       <button
+//         className={className}
+//         style={{ ...style, background: "rgb(44,183,248)"}}
+//         onClick={onClick}
+//       > </button> 
+//     );
+//   }
   
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style,  background: "rgb(44,183,248)" }}
-        onClick={onClick}
-      />
-    );
-  }
+//   function SamplePrevArrow(props) {
+//     const { className, style, onClick } = props;
+//     return (
+//       <div
+//         className={className}
+//         style={{ ...style,  background: "rgb(44,183,248)" }}
+//         onClick={onClick}
+//       />
+//     );
+//   }
   
 
 
