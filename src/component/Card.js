@@ -105,9 +105,9 @@ function Card(props){
                   {
                       bstStrategy.map(function(a,i){
                           return(
-                              <div key={i} className="product-info sm">
+                              <div key={i} className="product-info card-product-info sm">
                                   <img className="card-product-image" onClick={() =>{navigate('./products/detail/'+bstStrategy[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstStrategy[i].shortName +".jpg?raw=true"}  alt={'bgimage'+i} />
-                                  <p className="product-name"> {bstStrategy[i].name} </p>                                    
+                                  <p className="product-name card-product-name"> {bstStrategy[i].name} </p>                                    
                                   <p className="product-price"> ${bstStrategy[i].price} CAD </p>
                                   {stockCheck(bstStrategy[i].stock)}
                               </div>
@@ -138,9 +138,9 @@ function Card(props){
                   {
                       bstFamily.map(function(a,i){
                           return(
-                              <Col key={i} className="product-info sm">
+                              <Col key={i} className="product-info card-product-info sm">
                                   <img className="card-product-image" onClick={() =>{navigate('./products/detail/'+bstFamily[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/BoargleProject/main/src/img/bgImage/" + bstFamily[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
-                                  <p className="product-name"> {bstFamily[i].name} </p>                                    
+                                  <p className="product-name card-product-name"> {bstFamily[i].name} </p>                                    
                                   <p className="product-price"> ${bstFamily[i].price} CAD </p>
                                   {stockCheck(bstFamily[i].stock)}
                               </Col>

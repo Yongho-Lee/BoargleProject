@@ -108,7 +108,6 @@ body{
   outline: 0;
   border-color: #0000000f;
 }
-
 .card-box{
   background-color: #f0f0f0;
   border-radius: 30px;
@@ -120,10 +119,9 @@ body{
   margin-top: 20px;
 
 }
-
 .card-box p{
   font-size:15px;
-  font-weight: 500;
+  font-weight: bolder;
   margin-bottom: 10px;  
 }
 .list-Container{
@@ -131,6 +129,7 @@ body{
   /*background-color: black;*/
   padding: 5px;
 }
+
 
 /**/
 
@@ -285,6 +284,12 @@ ul.imgs li{
   padding-right: 25px; 
   margin-top: 3px;
 }
+
+.card-product-info p{
+  padding: 0px;
+  padding-left: 8px;
+}
+
 .product-image{
   width: 250px;
   height: 200px;
@@ -383,7 +388,7 @@ ul.imgs li{
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   background-color: 	#f4f4eb;
-  color: #E89558;
+  color: #5C6065;
 }
 
 
