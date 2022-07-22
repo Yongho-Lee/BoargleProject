@@ -13,13 +13,11 @@ body{
 
 
 .navbar-brand{
-  color: black;
-  
+  color: black;  
 }
 .nav-link {
   color: black;
 }
-
 .navbar-custom{
   background-color: #f8f8ed;
   opacity: 0.95;
