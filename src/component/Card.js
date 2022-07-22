@@ -51,7 +51,7 @@ function Card(props){
         slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 0,
-        nextArrow: <button class="Prev"><i class="fa-solid fa-arrow-left-to-line"></i></button>,
+        nextArrow: <button className="Prev"><i className="fa-solid fa-arrow-left-to-line"></i></button>,
         // prevArrow: <SamplePrevArrow />,
         responsive: [
             {
