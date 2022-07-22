@@ -377,10 +377,12 @@ ul.imgs li{
   margin: 20px;
   margin-bottom: 80px;
 }
-
 .end {
   opacity: 1;
   transition: opacity 0.5s;
+}
+.nav-link:active{
+  background-color: #F4BDAE;
 }
 
 @media (prefers-reduced-motion: no-preference) {
