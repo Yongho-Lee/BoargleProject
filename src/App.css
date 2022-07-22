@@ -4,6 +4,23 @@
   text-align: center;  
 }
 
+.navbar-brand{
+  color: black;
+  
+}
+.nav-link {
+  color: black;
+}
+
+.navbar-custom{
+  background-color: #f8f8ed;
+  opacity: 0.55;
+}
+body{
+  background-color: #f8f8ed;
+  /* background-color: #e6d4b3; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -16,6 +33,16 @@
 /* card, slicks ... */
 .container{
   max-width: 1080px;
+}
+
+.card-top-title{
+  font-size: 20px;
+  line-height: 1.5;
+  color: #5C6065;
+  font-weight: 700;
+  text-align: left;
+  margin: auto;
+  max-width: 1400px;
 }
 
 .left-text{  
@@ -34,6 +61,7 @@
   margin-bottom: 10px;
   font-size:24px;
   font-weight: 700;
+  color:white;
 }
 .left-text Button{
   margin-top: 8px;
@@ -103,6 +131,12 @@
   border-radius: 15px;
 }
 /**/
+.strategy-top-container{
+  background-color: #3c88c7;
+}
+.family-top-container{
+  background-color: #c28a5b;
+}
 
 .card-container{
   max-width: 1400px;
@@ -111,19 +145,13 @@
   padding-top: 1rem;
   padding-right: 1rem;
   
-  background-color: gray;
   margin: auto;
   border-radius: 15px;
   display: grid;
-  grid-template-columns: 400px 900px;
+  grid-template-columns: 400px 950px;
   /* grid-template-columns: repeat(2, 1fr 2fr); */
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-}
-.testInsideContainer{
-  background-color: blue;
-  padding: 5px;
-  margin-left: 0px;
 }
 
 
@@ -310,7 +338,7 @@ ul.imgs li{
 .main-bg{
   margin-left: auto;
   margin-right: auto;
-  width: 99%;
+  width: 100%;
   height:500px;
   background-image: url("./img/jb-twilight-struggle2.jpg");
   background-repeat: no-repeat;
