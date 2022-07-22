@@ -295,7 +295,7 @@ ul.imgs li{
 .card-product-image{
   width: 230px;
   height: 220px;
-  border-radius: 20%;
+  border-radius: 25px;
   padding:5px;
 }
 
