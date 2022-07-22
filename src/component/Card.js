@@ -85,10 +85,12 @@ function Card(props){
 
     return(
       <>
-
-        <p> Recently Best Selling Games</p>
-
-        <div className="container card-container"> 
+        <div className='card-top-title'>
+          <p> Recently Best Selling Games</p>
+          <hr></hr>
+        </div>
+        
+        <div className="container card-container strategy-top-container"> 
           <div className='left-text' >
             <div className="left-text-cover">
               <h2 className="card-newArrivals"> Strategy Games </h2>
@@ -122,7 +124,7 @@ function Card(props){
 
         <br/>
 
-        <div className="container card-container">
+        <div className="container card-container family-top-container">
             <div className='left-text' >
               <div className="left-text-cover">
                 <p className="card-newArrivals"> Family Games </p>

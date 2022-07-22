@@ -8,7 +8,7 @@ function Topnavbar(props) {
     //<img className="product-image img-responsive center-block" onClick={() =>{navigate('../detail/'+listName[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + listName[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
 
     return(
-        <Navbar className="navbar" bg="light" expand="lg" fixed="top">
+        <Navbar className="navbar navbar-custom" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand href="/">BoarGle!</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
