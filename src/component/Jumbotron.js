@@ -6,6 +6,7 @@ function jumbotron(props) {
         <div>
             <div className="main-bg">
             </div>
+            <div></div>
         </div>
 {/* 
         <div className="slider">
