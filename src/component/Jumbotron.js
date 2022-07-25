@@ -1,9 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom';
 
-function jumbotron(props) {
+function Jumbotron(props) {
 
 
-
+    let navigate = useNavigate();
     return(
         <>
         {/* <div>
@@ -18,10 +19,13 @@ function jumbotron(props) {
                     className="Jumbo-Slide-img"
                     src={require("../img/jb-twilight-struggle2.jpg")}
                     alt="First slide"
+                    onClick={() =>{navigate('../products/detail/817054010004')}}
                     />
                     <Carousel.Caption>
-                    <h3>Twilight Struggle</h3>
-                    <p># Best 2 Player Game # Strategy # 1 ~ 2 hours</p>
+                    <a href="../products/detail/817054010004">
+                        <h3>Twilight Struggle</h3>
+                    </a>
+                    <p># Best 2 Players Game  # Strategy  # 90 ~ 120 Min</p>
                     </Carousel.Caption>                    
                 </div>
 
@@ -30,13 +34,16 @@ function jumbotron(props) {
                 <div className="jumbo-carousel-box">
                     <img
                     className="Jumbo-Slide-img"
-                    src={require("../img/jb-twilight-struggle2.jpg")}
+                    src={require("../img/jb-puerto-rico.jpg")}
                     alt="Second slide"
+                    onClick={() =>{navigate('../products/detail/655132001953')}}
                     />
 
                     <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="../products/detail/655132001953">
+                        <h3>Puerto Rico</h3>
+                    </a>
+                    <p> # 12 +  # 90 Min  # 3 - 5 Players </p>
                     </Carousel.Caption>
                 </div>
 
@@ -46,14 +53,17 @@ function jumbotron(props) {
 
                     <img
                     className="Jumbo-Slide-img"
-                    src={require("../img/jb-twilight-struggle2.jpg")}
+                    src={require("../img/jb-puerto-rico.jpg")}
                     alt="Third slide"
+                    onClick={() =>{navigate('../products/detail/655132004923')}}
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <a href="../products/detail/655132004923">
+                        <h3 className="jumbo-caption jumbo-caption-RollForGal">Roll For The GALAXY</h3>
+                    </a>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        # 13 +  # 45 Min  # 2 - 5 Players
                     </p>
                     </Carousel.Caption>
                 </div>
@@ -95,7 +105,7 @@ function jumbotron(props) {
 
 }
 
-export default jumbotron;
+export default Jumbotron;
 
 
 

@@ -17,6 +17,7 @@ import InStock from './component/In-stock.js'
 //import other page components
 import Card from './component/Card.js'
 import Jumbotron from './component/Jumbotron.js'
+import Footer from './component/Footer.js'
 import Detail from './component/Detail.js'
 import Cart from './component/Cart.js'
 import NotFound from './component/NotFound.js'
@@ -114,6 +115,7 @@ function App() {
 
       </Routes>
       
+      <Footer/>
 
 
 
