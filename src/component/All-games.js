@@ -2,16 +2,14 @@ import Listing from './Listing.js'
 
 function AllGames(props) {
     const games = props.allGames;
+    const pageName = "All Products";
+
     return(
 
         <>
-        <div>
-            <h4> All-Games Page </h4>
-
-        </div>
 
                 {
-                    <Listing list={games}/>
+                    <Listing list={games} pageName={pageName}/>
                 }    
         </>
     )

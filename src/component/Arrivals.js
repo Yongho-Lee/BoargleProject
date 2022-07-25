@@ -21,15 +21,16 @@ function Arrivals(props) {
         return d.getFullYear() + "-" + ((d.getMonth() + 1) > 9 ? (d.getMonth() + 1).toString() : "0" + (d.getMonth() + 1)) + "-" + (d.getDate() > 9 ? d.getDate().toString() : "0" + d.getDate().toString());
     }
 
+    const pageName = "New arrival games";
+    const date = getYmd10(twoMonthAgo) + " ~ today";
+
+
     return(
         
         <div>
-            <h4> New Arrival page </h4>
-
-            <p>{getYmd10(twoMonthAgo)} ~ today</p>
 
                 {
-                    <Listing list={newArrivals}/>
+                    <Listing list={newArrivals} pageName={pageName} date={date}/>
                 }
 
         </div>        

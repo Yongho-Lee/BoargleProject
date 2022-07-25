@@ -10,7 +10,13 @@ function Listing(props) {
     //<img className="product-image img-responsive center-block" onClick={() =>{navigate('../detail/'+listName[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + listName[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
 
     return(
+        <>
+
         <Container className="list-Container">
+            <div className="listing-page-title">
+                <h4> {props.pageName} </h4>
+                <p> {props.date}</p>
+            </div>
             <Row xs={1} md={4} lg={5} className="list-Container">
         {
             listName.map(function(a,i){
@@ -26,6 +32,7 @@ function Listing(props) {
         }
             </Row>
         </Container>
+        </>
     )
 }
 export default Listing;

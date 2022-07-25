@@ -15,16 +15,17 @@ function BestStrategy(props) {
             return true
         } else { return false }
     }
-    
+
+    const pageName = "Best Strategy Games";
+
 
     return(
 
         <>
-        <div>
-            <h4> Best Strategy Game page </h4>      
+        <div>  
 
                 {
-                    <Listing list={bstStrategy}/>
+                    <Listing list={bstStrategy} pageName={pageName}/>
                 }
      
         </div>

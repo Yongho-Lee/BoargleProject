@@ -13,14 +13,15 @@ function BestFamily(props) {
         }
     }
 
+    const pageName = "Best Family Game page";
+
     return(
 
         <>
         <div>
-            <h4> Best Family Game page </h4>  
 
                 {
-                    <Listing list={bstfamily} />
+                    <Listing list={bstfamily} pageName={pageName}/>
                 }
 
         </div>

@@ -12,14 +12,15 @@ function Best2players(props) {
         }
     }
 
+    const pageName = "Best 2 players games";
+
     return(
 
         <>
-        <div>
-            <h4> Best 2 players page </h4>        
+        <div>   
 
                 {
-                    <Listing list={bst2games}/>
+                    <Listing list={bst2games} pageName={pageName}/>
                 }
      
         </div>

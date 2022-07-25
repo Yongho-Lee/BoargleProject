@@ -53,7 +53,7 @@ function Jumbotron(props) {
 
                     <img
                     className="Jumbo-Slide-img"
-                    src={require("../img/jb-puerto-rico.jpg")}
+                    src={require("../img/jb-roll-for-galaxy.jpg")}
                     alt="Third slide"
                     onClick={() =>{navigate('../products/detail/655132004923')}}
                     />

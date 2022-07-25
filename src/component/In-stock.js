@@ -12,14 +12,16 @@ function InStock(props) {
         }
     }
 
+    const pageName = "In Stock Board Games";
+
+
     return(
 
         <>
-        <div>
-            <h4> In Stock Board Games </h4>           
+        <div>        
 
                 {
-                    <Listing list={instkGames} />
+                    <Listing list={instkGames} pageName={pageName}/>
                 }     
         </div>
 

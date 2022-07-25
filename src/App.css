@@ -26,7 +26,7 @@ body{
   border-bottom: 1px solid #393939;
   font-size: 0;
 }
-.footer-container h3, ul, li{
+.footer-container h3, .footer-container ul, .footer-container li{
   font-family: 'Jost', 'sans-serif';
   font-size: 15px;
   margin-left:15px;
@@ -87,7 +87,7 @@ body{
   /*background-color: white;*/
 
 }
-.left-text p, h2{
+.left-text p, .left-text h2{
   margin-bottom: 10px;
   font-size:24px;
   font-weight: 700;
@@ -151,13 +151,9 @@ body{
   font-weight: bolder;
   margin-bottom: 10px;  
 }
-.list-Container{
-  max-width: 1080px;
-  /*background-color: black;*/
-  padding: 5px;
-}
 .right-card{
   background-color: #F8F8ED;
+  padding-left: 10px;
 }
 .strategy-card{
   background-color: #F8F8ED;
@@ -206,8 +202,29 @@ body{
 
 
 
-
-
+.list-Container{
+  max-width: 1080px;
+  /*background-color: black;*/
+  padding: 5px;
+}
+.listing-page-title{
+  border-bottom: 1px solid #393939;
+  margin-bottom: 40px;
+  
+}
+.listing-page-title h4{
+  color: #5C6065;
+  text-align: left;
+  margin-left: 40px;
+  font-size: 24px;
+  font-weight: bold;   
+}
+.listing-page-title p{
+  color: #5C6065;
+  text-align: left;
+  margin-left: 40px;
+  font-size: 12px;
+}
 
 
 .cart-table-container{
@@ -233,14 +250,14 @@ body{
 
 .product-image{
   width: 250px;
-  height: 200px;
+  height: 220px;
   border-radius: 16%;
 }
 
-.card-product-image{
-  width: 230px;
+.card-product-image {
+  width: 220px;
   height: 220px;
-  border-radius: 25px;
+  border-radius: 20px;
   padding:5px;
 }
 
