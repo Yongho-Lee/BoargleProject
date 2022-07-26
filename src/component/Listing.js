@@ -7,8 +7,6 @@ function Listing(props) {
     let listName = props.list;
     let navigate = useNavigate();
 
-    //<img className="product-image img-responsive center-block" onClick={() =>{navigate('../detail/'+listName[i].id)}} src={"https://raw.githubusercontent.com/Yongho-Lee/Boargle/main/src/img/bgImage/" + listName[i].shortName +".jpg?raw=true"} width="250px" height="200px" alt={'bgimage'+i} />
-
     return(
         <>
 

@@ -3,7 +3,7 @@ function NotFound() {
 
         <>
         <div style={ {marginTop: "60px"}}>
-            <h4> 404 Not Found </h4>
+            <h1> 404 Not Found </h1>
             
         </div>
 

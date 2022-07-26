@@ -5,9 +5,7 @@ function AllGames(props) {
     const pageName = "All Products";
 
     return(
-
         <>
-
                 {
                     <Listing list={games} pageName={pageName}/>
                 }    
