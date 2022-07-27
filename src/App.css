@@ -521,6 +521,16 @@ body{
 }
 
 
+/* confirm page*/
+.confirm-page-title{
+  max-width:  1080px;
+  margin: auto;
+}
+.confirm-page-title h4, .confirm-page-title p{
+  padding-top: 60px;
+  text-align: center;
+}
+
 
 
 @media (max-width:426px) {

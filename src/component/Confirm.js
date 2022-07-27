@@ -19,7 +19,7 @@ function Confirm() {
     return(
 
         <>
-        <div style={ {marginTop: "60px"}}>
+        <div className="listing-page-title confirm-page-title" style={ {marginTop: "60px"}}>
             <h4> Thank you for your order </h4>
             <p> redirect in 5 seconds . . . </p>
             
