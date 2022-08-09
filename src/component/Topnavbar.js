@@ -23,7 +23,6 @@ function Topnavbar(props) {
                 <NavDropdown.Item onClick={()=>{ navigate('/products/best-family')}}>Best family Games</NavDropdown.Item>
                 <NavDropdown.Item onClick={()=>{ navigate('/products/best-2players')}}>Best 2 Players Games</NavDropdown.Item>
                 <NavDropdown.Item onClick={()=>{ navigate('/products/best-strategy')}}>Best strategy</NavDropdown.Item>
-                <NavDropdown.Divider />
               </NavDropdown>
               <Nav.Link onClick={()=>{ navigate('/cart')}}> 🛒 Cart</Nav.Link>
             </Nav>
